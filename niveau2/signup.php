@@ -1,6 +1,6 @@
 <?php
     include_once "../connexion/connect.php" ;
-    include_once "includes/tools.php" ;
+    include_once "../connexion/tools.php" ;
 
     // de base on définit des variables avec les valeurs par défaut de chaque champ
     $email = "" ;

@@ -1,7 +1,7 @@
 <?php
     include_once "../connexion/connect.php" ;
-    include_once "includes/tools.php" ;
-    include_once "includes/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
+    include_once "../connexion/tools.php" ;
+    include_once "../connexion/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
 
     $message = null ; // message qui servira à indiquer à l'utilisateur si l'email a été envoyé
     if (isset($_POST["username"])) // on check si on trouve bien le username dans le POST

@@ -46,7 +46,7 @@ include('adminpartials/head.php');
           foreach ($query as $command){ ?>
 
             <a href="ordershow.php?pro_id=<?php echo $command['idCommande']?>">
-            <h3><?php echo $final['idCommande'] ?>: <?php echo $command['date_commande']?></h3><br>
+            <h3><?php echo $command['idCommande'] ?>: <?php echo $command['date_commande']?></h3><br>
             <h3>Total: <?php echo $command['date_commande']?></h3><br>
 
           </a>

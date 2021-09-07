@@ -1,7 +1,10 @@
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
-require_once 'PHPMailerAutoload.php';
-
+//require_once 'PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 /*******************
 $to : adresse email du destinataire (ex : "kevindu93@gmail.com")
 $subject : sujet de mail (ex : "Votre lien de réinitialisation du mot de passe")

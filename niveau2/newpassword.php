@@ -1,6 +1,6 @@
 <?php
     include_once "../connexion/connect.php" ;
-    include_once "includes/tools.php" ;
+    include_once "../connexion/tools.php" ;
 
     $error_message = null ; // variable qui servira à la fois à savoir s'il y a eu une erreur, et son message d'erreur
     $valid_message = null ; // si l'opération a réussi, on voudra aussi afficher un message de succès

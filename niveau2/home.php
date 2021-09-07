@@ -1,7 +1,7 @@
 <?php
     session_start() ; // il faut démarrer la session
     include_once "../connexion/connect.php" ;
-    include_once "includes/tools.php" ;
+    include_once "../connexion/tools.php" ;
 
     $error_message = null ; // cette variable servira à savoir à la fois si une erreur a été détectée et si oui, son message
     if ((isset($_GET["action"]) && $_GET["action"] === "logout") // bouton logout
