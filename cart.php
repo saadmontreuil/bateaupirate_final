@@ -125,11 +125,12 @@ include ("partials/head.php");
 			</div>
 		</div>
 	</div>
-		
-	
-		
+
+
+
 
 	<?php
+    echo 'saaaaaaaaaaaaaaaad'.$total;
 	include('partials/footer.php');
 	?>
 </body>

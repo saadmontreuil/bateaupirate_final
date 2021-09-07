@@ -1,5 +1,5 @@
 <?php
-include("../partials/connect.php");
+include('../connexion/connect.php');
 $name=$_POST['name'];
 $price=$_POST['price'];
 $description=$_POST['description'];
@@ -20,10 +20,16 @@ move_uploaded_file($file_tmp, $file_store);
 
 
 
+//
 
-$sql="INSERT INTO products(name,price,picture,description,category_id) VALUES('$name','$price','$file_path','$description','$category')";
 
-$connect->query($sql);
+$database->insert('vinyl',[
+    'nomVinyl'=>$name,
+    'prixHT'=>$price,
+    'photo'=>$file_path,
+    'description'=>$description,
+    'idCategorie'=>$category
+]);
 
 header('location: productsshow.php');
 ?>

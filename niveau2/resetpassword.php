@@ -1,5 +1,5 @@
 <?php
-    include_once "connect.php" ;
+    include_once "../connexion/connect.php" ;
     include_once "includes/tools.php" ;
     include_once "includes/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
 

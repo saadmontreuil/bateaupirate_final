@@ -4,22 +4,25 @@ include('adminpartials/head.php');
 
 if(isset($_POST['login'])){
 
-include('../partials/connect.php');
+include('../connexion/connect.php');
 
 
 
 $email=$_POST['email'];
 $password=$_POST['password'];
-$sql="SELECT * from admins Where username='$email' AND password='$password'";
-$results=$connect->query($sql);
-$final=$results->fetch_assoc();
 
-$_SESSION['email']=$final['username'];
-$_SESSION['password']=$final['password'];
-
+$qeuery= $database->select('admins','*',[
+    "AND" => [
+        "username" => $email,
+        "password" => $password]]);
 
 
-if($email=$final['username'] AND $password=$final['password']){
+$_SESSION['email']=$qeuery[0]['username'];
+$_SESSION['password']=$qeuery[0]['password'];
+
+
+
+if($email=$qeuery[0]['username'] AND $password=$qeuery[0]['password']){
   header('location: adminindex.php');
 }else{
   header('location: adminlogin.php');

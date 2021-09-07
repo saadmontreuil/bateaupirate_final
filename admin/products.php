@@ -61,11 +61,12 @@ include('adminpartials/head.php');
                   <label for="category">Category</label>
                   <select id="category" name="category">
                     <?php
-                    include('../partials/connect.php');
-                    $cat="SELECT * from categories";
-                    $results=mysqli_query($connect,$cat);
-                    while($row=mysqli_fetch_assoc($results)){
-                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    include('../connexion/connect.php');
+
+                    $query = $database->select('categories_musique','*');
+
+                   foreach ($query as $cat){
+                    echo "<option value=".$cat['idCategorie'].">".$cat['nom']."</option>";
                   }
                     ?>
                   </select>

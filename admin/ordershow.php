@@ -37,20 +37,18 @@ include('adminpartials/head.php');
         <div class="col-sm-9">
 
           <?php
-          include('../partials/connect.php');
+          include('../connexion/connect.php');
 
           $id=$_GET['pro_id'];
-          $sql="SELECT * from orders WHERE id='$id'";
-          $results=$connect->query($sql);
 
-          $final=$results->fetch_assoc();        
+          $query= $database->select('commandes','*',['idCommande'=>$id])
           ?>
 
-          <h3> CustomerNo : <?php echo $final['customer_id']?> </h3><hr><br>
+          <h3> CustomerNo : <?php echo $query[0]['idCommande']?> </h3><hr><br>
 
-          <h3> Total : <?php echo $final['total']?> </h3><hr><br>
+          <h3> Total : <?php echo $query[0]['date_commande']?> </h3><hr><br>
 
-          <h3> Address : <?php echo $final['address']?> </h3><hr><br>
+          <h3> Address : <?php echo $query[0]['idClient']?> </h3><hr><br>
           
 
 
@@ -60,15 +58,14 @@ include('adminpartials/head.php');
 
           <?php
           
-          $sql2="SELECT * from order_details WHERE id='$id'";
-          $results=$connect->query($sql2);
 
-          $final=$results->fetch_assoc();        
+
+          $query2= $database->select('articles_commande','*',['idCommande'=>$id])
           ?>
 
-          <h3> ProductNo : <?php echo $final['product_id']?> </h3><hr><br>
+          <h3> ProductNo : <?php echo $query2[0]['idVinyl']?> </h3><hr><br>
 
-          <h3> quantity : <?php echo $final['quantity']?> </h3><hr><br>
+          <h3> quantity : <?php echo $query2[0]['quantite']?> </h3><hr><br>
           
 
 

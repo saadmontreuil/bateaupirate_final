@@ -1,5 +1,5 @@
 <?php
-    include_once "connect.php" ;
+    include_once "../connexion/connect.php" ;
     include_once "includes/tools.php" ;
 
     $error_message = null ; // variable qui servira à la fois à savoir s'il y a eu une erreur, et son message d'erreur

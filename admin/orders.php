@@ -38,20 +38,21 @@ include('adminpartials/head.php');
           
         
           <?php
-          include('../partials/connect.php');
+          include('../connexion/connect.php');
 
-          $sql="Select * from orders";;
-          $results=$connect->query($sql);
-          while($final=$results->fetch_assoc()){ ?>
 
-            <a href="ordershow.php?pro_id=<?php echo $final['id']?>">
-            <h3><?php echo $final['id'] ?>: <?php echo $final['phone']?></h3><br>
-            <h3>Total: <?php echo $final['phone']?></h3><br>
+          $query= $database->select('commandes','*');
+
+          foreach ($query as $command){ ?>
+
+            <a href="ordershow.php?pro_id=<?php echo $command['idCommande']?>">
+            <h3><?php echo $final['idCommande'] ?>: <?php echo $command['date_commande']?></h3><br>
+            <h3>Total: <?php echo $command['date_commande']?></h3><br>
 
           </a>
 
 
-          <a href="orderdelete.php?del_id=<?php echo $final['id'] ?>">
+          <a href="orderdelete.php?del_id=<?php echo $command['idCommande'] ?>">
             <button style="color:red">Delete</button>
           </a><hr>
 

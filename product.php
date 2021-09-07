@@ -252,7 +252,7 @@ include ("partials/head.php");
 			<div class="row isotope-grid">
 				<?php
 
-				include("partials/connect.php");
+				include("connexion/connect.php");
                 $query =$database->select("vinyl", "*");
 
 
@@ -264,7 +264,7 @@ include ("partials/head.php");
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
+							<img src="images/photos<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
 
 							<a href="details.php?details_id=<?php echo $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								Quick View

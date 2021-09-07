@@ -1,6 +1,6 @@
 <?php
     session_start() ; // on démarre une session qui servira en cas de login réussit
-    include_once "connect.php" ;
+    include_once "../connexion/connect.php" ;
     include_once "includes/tools.php" ;
 
     $error_message = null ; // cette variable servira à la fois à savoir si on a trouvé une erreur et à définir un message d'erreur

@@ -1,7 +1,7 @@
 <?php
 session_start() ; // il faut démarrer la session
-include "partials/connect.php" ;
-include_once "includes/tools.php" ;
+include "connexion/connect.php" ;
+include_once "connexion/tools.php" ;
 
 $error_message = null ; // cette variable servira à savoir à la fois si une erreur a été détectée et si oui, son message
 if ((isset($_GET["action"]) && $_GET["action"] === "logout") // bouton logout
@@ -179,17 +179,27 @@ include ("partials/banner.php");
 						All Products
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".1">
-						Pants
-					</button>
+                    <?php
+                    $query= $database->select('categories_musique','*');
+                    $i=1;
+                    foreach ($query as $catg){
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".2">
-						Shirts
-					</button>
+                     echo   '<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".'.$i.'">'.$catg['nom']
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".0">
-						Others
-					</button>
+					.'</button>';
+
+                        $i++;
+                    }
+
+					?>
+
+<!--					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".2">-->
+<!--						Shirts-->
+<!--					</button>-->
+<!---->
+<!--					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".0">-->
+<!--						Others-->
+<!--					</button>-->
 
 			
 					
@@ -414,7 +424,7 @@ include ("partials/banner.php");
 
 			<div class="row isotope-grid">
 				<?php 
-				include("partials/connect.php");
+
 
                 $query =$database->select("vinyl", "*");
 
@@ -423,7 +433,7 @@ include ("partials/banner.php");
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
+							<img src="images/photos/<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
 
 							<a href="details.php?details_id=<?php echo $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								Quick View

@@ -42,42 +42,38 @@ include('adminpartials/head.php');
           <?php
           $newid=$_GET['up_id'];
 
-          include('../partials/connect.php');
+          include('../connexion/connect.php');
 
-          $sql="Select * from products WHERE id='$newid'";
 
-          $results=$connect->query($sql);
-
-          $final=$results->fetch_assoc();
-
+$query=$database->select('vinyl','*',['idVinyl'=>$newid])
 
           ?>
           <h1>Products</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" value="<?php echo $final['name'] ?>" name="name">
+                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" value="<?php echo $query[0]['nomVinyl'] ?>" name="name">
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $final['price'] ?>" name="price">
+                  <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $query[0]['prixHT'] ?>" name="price">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file" value="<?php echo $final['picture'] ?>">
+                  <input type="file" id="picture" name="file" value="<?php echo $query[0]['photo'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" value="<?php echo $final['description'] ?>" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
-                  <select id="category" name="category" value="<?php echo $final['category'] ?>">
+                  <select id="category" name="category" value="<?php echo $query[0]['idCategorie'] ?>">
                     <?php
-                    $cat="SELECT * from categories";
-                    $results=mysqli_query($connect,$cat);
-                    while($row=mysqli_fetch_assoc($results)){
-                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+
+                    $query2=$database->select('categories_musique','*');
+                   foreach ($query2 as $categorie){
+                    echo "<option value=".$categorie['idCategorie'].">".$categorie['nom']."</option>";
                   }
                     ?>
                   </select>
@@ -85,7 +81,7 @@ include('adminpartials/head.php');
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="hidden" value="<?php echo $final['id'] ?>" name="form_id">
+                <input type="hidden" value="<?php echo $query[0]['idVinyl'] ?>" name="form_id">
                 <button type="submit" class="btn btn-primary" name="update">Update</button>
               </div>
             </form>

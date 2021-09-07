@@ -1,14 +1,12 @@
-<?php 
-include('../partials/connect.php');
+<?php
+include('../connexion/connect.php');
 $newid=$_GET['del_id'];
 
-$sql="Delete from orders where id='$newid'";
+$query=$database->delete('commandes',['idCommande'=>$newid]);
 
-if (mysqli_query($connect,$sql)) {
+
 	header('location: orders.php');
-}else{
-	echo "Not Deleted";
-}
+
 
 
 
