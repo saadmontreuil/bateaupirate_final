@@ -10,7 +10,7 @@ if ((isset($_GET["action"]) && $_GET["action"] === "logout") // bouton logout
 {
     // on vérifie si on a bien un email en session, sinon ça veut dire que l'utilisateur n'est pas connecté
     session_destroy();
-    header('Location: niveau2/login.php'); // on le renvoie au login
+    header('Location:login.php'); // on le renvoie au login
 }
 
 // on sait que l'utilisateur est bien connecté, du coup on commence le traitement backend

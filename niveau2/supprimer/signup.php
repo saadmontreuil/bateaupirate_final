@@ -99,7 +99,13 @@
 ?>
 
 
-<?php include_once ("templates/header.php") ; ?>
+<?php include_once ("templates/header.php") ;
+include ("../partials/head.php");
+include ("../partials/header.php");
+
+
+?>
+
 
         <div class="container">
             <div class="col-12">
@@ -139,3 +145,4 @@
             </div>
         </div>
 <?php include_once ("templates/footer.php") ; ?>
+

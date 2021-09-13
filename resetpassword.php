@@ -1,7 +1,7 @@
 <?php
-    include_once "../connexion/connect.php" ;
-    include_once "../connexion/tools.php" ;
-    include_once "../connexion/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
+    include_once "connexion/connect.php" ;
+    include_once "connexion/tools.php" ;
+    include_once "connexion/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
 
     $message = null ; // message qui servira à indiquer à l'utilisateur si l'email a été envoyé
     if (isset($_POST["username"])) // on check si on trouve bien le username dans le POST
@@ -13,7 +13,7 @@
         {
             $token = bin2hex(random_bytes(32)); // on génère un token, des milliers de méthodes sont acceptables
             // on créé le lien qui sera envoyé à l'utilisateur (à adapter suivant vos serveurs)
-            $link =  "http://".$_SERVER['SERVER_NAME']."/bateaupirate_final/niveau2/newpassword.php?id=".$user[DATABASE_TABLE_UTILISATEURS_ID]."&token=".$token ;
+            $link =  "http://".$_SERVER['SERVER_NAME']."/bateaupirate_final/newpassword.php?id=".$user[DATABASE_TABLE_UTILISATEURS_ID]."&token=".$token ;
             // corps de l'email
             $body = "Merci de cliquer sur le lien suivant pour réinitialiser votre mot de passe : <a href='$link'>$link</a>" ;
             // envoi de l'email à l'utilisateur
@@ -52,11 +52,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include ("../partials/head.php");
+include ("partials/head.php");
 ?>
 <body class="animsition">
 <?php
-include ("../partials/header.php");
+include ("partials/header.php");
 
 
 ?>

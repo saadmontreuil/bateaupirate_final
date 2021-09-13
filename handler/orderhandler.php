@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../partials/connect.php');
+include('../connexion/connect.php');
 
 $total=$_POST['total'];
 
