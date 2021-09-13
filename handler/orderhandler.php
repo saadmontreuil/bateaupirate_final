@@ -9,7 +9,7 @@ $phone=$_POST['phone'];
 $address=$_POST['address'];
 $customerid=$_SESSION['customerid'];
 $payment=$_POST['payment'];
-
+$database->query('set forgein_key_cheks = 0');
 //$sql="INSERT INTO orders(customer_id, address, phone, total, pay_method) VAlUES('$customerid','$address','$phone','$total', '$payment')";
 //$connect->query($sql);
 $query = $database->insert('commandes',[
@@ -49,6 +49,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
 
     ]);
 }
+$database->query('set forgein_key_cheks = 1');
 if ($payment=="paypal") {
 	$_SESSION['total']=$total;
 	header('location: paypal.php');

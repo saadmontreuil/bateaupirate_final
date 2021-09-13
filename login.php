@@ -44,6 +44,10 @@
                         ], [DATABASE_TABLE_UTILISATEURS_EMAIL => $email]);
                     // on met l'email en session
                     $_SESSION["email"] = $email ;
+                    $_SESSION["password"] = $pwd ;
+                    $query=$database->select('clients','idClient',['email'=>$email]);
+
+                    $_SESSION["customerid"] = $query[0];
                     // et on redirige vers la page home.php
                     header('Location: index.php');
                 }

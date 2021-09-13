@@ -47,10 +47,17 @@ include ("partials/head.php");
 									
 									foreach ($_SESSION['cart'] as $key => $value) {
 									$total=$total+$value['item_price'];
-									
 
 
-
+//
+//                                        echo "<h3> PHP List All Session Variables</h3>";
+//foreach ($_SESSION as $key=>$val){
+//
+//    print_r($key);
+//    print_r($val) ;
+//}
+//    print_r($key);
+//    print_r($val) ;
 								?>
 								<tr class="table_row">
 									<td class="column-1">
@@ -131,6 +138,14 @@ include ("partials/head.php");
 
 	<?php
     echo 'saaaaaaaaaaaaaaaad'.$total;
+    echo $value['item_price'];
+//    foreach ($_SESSION as $key=>$val){
+//
+//        print_r($key);
+//        print_r($val) ;
+//    }
+//    print_r($key);
+//    print_r($val) ;
 	include('partials/footer.php');
 	?>
 </body>
