@@ -1,5 +1,15 @@
 <?php
+
 session_start() ; // il faut démarrer la session
+//echo "<h3> PHP List All Session Variables</h3>";
+//foreach ($_SESSION as $key=>$val){
+//
+//    print_r($key);
+//    print_r($val) ;
+//}
+//    print_r($key);
+//    print_r($val) ;
+//echo $_SESSION['password'];
 include "connexion/connect.php" ;
 include_once "connexion/tools.php" ;
 
@@ -137,7 +147,7 @@ if (isset($_POST["submit"]))
         $nom = null ;
         $prenom = null ;
         $email = null ;
-        $is_pro = false ;
+//        $is_pro = false ;
     }
 
 }

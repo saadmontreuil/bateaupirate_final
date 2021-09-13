@@ -13,12 +13,10 @@ $password=$_POST['password'];
 //$sql="SELECT * from customers Where username='$email' AND password='$password'";
 $query = $database->select('clients','*',['email'=>$email ,'mdp'=>$password]);
 
-//$results=$connect->query($sql);
-//$final=$results->fetch_assoc();
+
 
 $_SESSION['email']=$query[0]['email'];
 $_SESSION['password']=$query[0]['mdp'];
-
 $_SESSION['customerid']=$query[0]['id'];
 
 

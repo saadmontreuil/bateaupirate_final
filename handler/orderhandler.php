@@ -10,15 +10,27 @@ $address=$_POST['address'];
 $customerid=$_SESSION['customerid'];
 $payment=$_POST['payment'];
 
-$sql="INSERT INTO orders(customer_id, address, phone, total, pay_method) VAlUES('$customerid','$address','$phone','$total', '$payment')";
-$connect->query($sql);
+//$sql="INSERT INTO orders(customer_id, address, phone, total, pay_method) VAlUES('$customerid','$address','$phone','$total', '$payment')";
+//$connect->query($sql);
+$query = $database->insert('commandes',[
+    'idClient'=>$customerid,
+    'total'=>$total,
+
+]);
 
 
-$sql2="Select id from orders order by id DESC limit 1";
-$result=$connect->query($sql2);
-$final=$result->fetch_assoc();
-$orderid=$final['id'];
+//$sql2="Select id from orders order by id DESC limit 1";
+//$result=$connect->query($sql2);
+//$final=$result->fetch_assoc();
+//$orderid=$final['id'];
 
+$query2 = $database->select('commandes',"idCommande",['ORDER'=>[
+    "idCommande"=>'DESC',
+    'LIMIT' => 1
+
+]
+]);
+$orderid = $query2;
 
 
 foreach ($_SESSION['cart'] as $key => $value) {
@@ -26,9 +38,16 @@ foreach ($_SESSION['cart'] as $key => $value) {
 	$quantity=$value['quantity'];
 
 
-	$sql3="INSERT Into order_details(order_id,product_id,quantity) VAlUES('$orderid','$proid','$quantity')";
-	$connect->query($sql3);
+//	$sql3="INSERT Into order_details(order_id,product_id,quantity) VAlUES('$orderid','$proid','$quantity')";
+//	$connect->query($sql3);
 	# code...
+    $query3 =$database->insert('articles_commande',[
+
+        'idCommande'=>$orderid,
+        'idVinyl'=>$proid,
+        'quantite'=>$quantity,
+
+    ]);
 }
 if ($payment=="paypal") {
 	$_SESSION['total']=$total;
