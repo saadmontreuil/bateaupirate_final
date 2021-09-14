@@ -9,13 +9,13 @@ if (isset($_SESSION['cart'])) {
 	}else{
 
 	$count=count($_SESSION['cart']);
-	$_SESSION['cart'][$count]=array('item_id' => $_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['num-product']);
+	$_SESSION['cart'][$count]=array('item_id' => $_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['button_detail']);
 	echo "<script>alert('Product Added');
 	window.location.href='product.php';
 	</script>";
 	}
 } else {
-	$_SESSION['cart'][0]=array('item_id'=>$_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['num-product']);
+	$_SESSION['cart'][0]=array('item_id'=>$_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['button_detail']);
 	echo "<script>alert('Product Added');
 	window.location.href='product.php';
 	</script>";

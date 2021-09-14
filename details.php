@@ -70,7 +70,7 @@ include ("partials/head.php");
 						<div class="p-t-33">
 
 
-                            <form action="carthandler.php" method="post">
+<!--                            <form action="carthandler.php" method="post">-->
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -79,21 +79,21 @@ include ("partials/head.php");
 											<i class="fs-16 zmdi zmdi-minus"></i>
 										</div>
 
-										<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
+										<input class="mtext-104 cl3 txt-center num-product" id="quantit" type="number" name="num-product" value="1">
 
 										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-plus"></i>
 										</div>
 									</div>
 
-									<button type="submit" name="submit" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-										Add to cart
+									<button id="button_detail" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+										Ajotuer sur cart
 									</button>
 
 								</div>
 							</div>
 						</div>
-                        </form>
+<!--                        </form>-->
 
 						<!--  -->
 						<div class="flex-w flex-m p-l-100 p-t-40 respon7">

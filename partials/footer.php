@@ -355,3 +355,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+        $("#button_detail").click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "carthandler.php",
+                data: {
+                    // id: $(this).val(),
+                    button_detail: $("#quantit").val()
+                },
+                success: function(result) {
+                    alert('ok');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+        });
+
+
+
+    </script>
