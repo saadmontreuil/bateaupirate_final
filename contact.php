@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 include ("partials/head.php");
+include_once "connexion/sendemail.php";
 ?>
 <body class="animsition">
 	<?php
@@ -25,7 +26,7 @@ include ("partials/head.php");
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form action="handler/contact.php" method="POST">
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							Send Us A Message
+                            Envoie-nous un message
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
@@ -38,7 +39,7 @@ include ("partials/head.php");
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							Submit
+							Envoyer
 						</button>
 					</form>
 				</div>
@@ -51,11 +52,11 @@ include ("partials/head.php");
 
 						<div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
-								Address
+								Adresse
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								Hokage office, Hidden street, Hidden Leaf Village, HL 10018 SL
+                                Lycée saint exupery saint Raphaël, Lycée saint exupery Avenue de Valescure, 83700, Saint-Raphaël
 							</p>
 						</div>
 					</div>
@@ -67,11 +68,11 @@ include ("partials/head.php");
 
 						<div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
-								Lets Talk
+								Parlons
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								+1 800 Ino
+								+33 77 8324501
 							</p>
 						</div>
 					</div>
@@ -83,11 +84,11 @@ include ("partials/head.php");
 
 						<div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
-								Sale Support
+								Support Vente
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								tenten@hl.com
+								saad@bateaupirate.com
 							</p>
 						</div>
 					</div>

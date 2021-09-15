@@ -50,7 +50,7 @@
 							</li>
 
 							<li>
-								<a href="product.php">Shop</a>
+								<a href="product.php">Vinyles</a>
 							</li>
 
 							<li>
