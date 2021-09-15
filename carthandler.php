@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_POST['button_detail']) ){
+    $val = $_POST['button_detail'];
+}
 if (isset($_SESSION['cart'])) {
 	$checker=array_column($_SESSION['cart'], 'item_name');
 	if(in_array($_GET['cart_name'], $checker)){
@@ -9,13 +12,13 @@ if (isset($_SESSION['cart'])) {
 	}else{
 
 	$count=count($_SESSION['cart']);
-	$_SESSION['cart'][$count]=array('item_id' => $_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['button_detail']);
+	$_SESSION['cart'][$count]=array('item_id' => $_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$val);
 	echo "<script>alert('Product Added');
 	window.location.href='product.php';
 	</script>";
 	}
 } else {
-	$_SESSION['cart'][0]=array('item_id'=>$_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$_POST['button_detail']);
+	$_SESSION['cart'][0]=array('item_id'=>$_GET['cart_id'], 'item_name'=>$_GET['cart_name'], 'item_price'=>$_GET['cart_price'] ,'quantity'=>$val);
 	echo "<script>alert('Product Added');
 	window.location.href='product.php';
 	</script>";

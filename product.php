@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+include "connexion/connect.php" ;
+include_once "connexion/tools.php" ;
 include ("partials/head.php");
 ?>
 <body class="animsition">
@@ -8,28 +10,31 @@ include ("partials/head.php");
 	include ("partials/header.php");
 
 
+
 ?>
 	<br>
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
-			<div class="flex-w flex-sb-m p-b-52">
+			<div style="margin-top: 5%;" class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						All Products
+						Tous les vinyles
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".1">
-						Pants
-					</button>
+                    <?php
+                    $query= $database->select('categories_musique','*');
+                    $i=1;
+                    foreach ($query as $catg){
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".2">
-						Shirts
-					</button>
+                        echo   '<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".'.$i.'">'.$catg['nom']
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".0">
-						Others
-					</button>
+                            .'</button>';
+
+                        $i++;
+                    }
+
+                    ?>
 
 			
 					
@@ -252,7 +257,7 @@ include ("partials/head.php");
 			<div class="row isotope-grid">
 				<?php
 
-				include("connexion/connect.php");
+
                 $query =$database->select("vinyl", "*");
 
 
@@ -264,10 +269,10 @@ include ("partials/head.php");
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="images/photos<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
+							<img src="<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
 
 							<a href="details.php?details_id=<?php echo $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Quick View
+                                Détails
 							</a>
 						</div>
 

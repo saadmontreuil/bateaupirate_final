@@ -179,14 +179,14 @@ include ("partials/banner.php");
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
-					Product Overview
+                    Les Catégories
 				</h3>
 			</div>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						All Products
+                        Tous les vinyles
 					</button>
 
                     <?php
@@ -244,43 +244,43 @@ include ("partials/banner.php");
 					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
 						<div class="filter-col1 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Sort By
+                                Trier par
 				</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Default
+                                        Défaut
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Popularity
+                                        Popularité
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Average rating
+                                        Note moyenne
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										Newness
+                                        Nouveauté
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: Low to High
+                                        Prix croissant
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: High to Low
+                                        Prix décroissant
 									</a>
 								</li>
 							</ul>
@@ -288,13 +288,13 @@ include ("partials/banner.php");
 
 						<div class="filter-col2 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Price
+                                Prix
 							</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										All
+                                        Tout
 									</a>
 								</li>
 
@@ -443,10 +443,10 @@ include ("partials/banner.php");
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="images/photos/<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
+							<img src="<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
 
 							<a href="details.php?details_id=<?php echo $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Quick View
+                                Détails
 							</a>
 						</div>
 
@@ -478,7 +478,7 @@ include ("partials/banner.php");
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a href="product.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
+                    Charger plus
 				</a>
 			</div>
 		</div>

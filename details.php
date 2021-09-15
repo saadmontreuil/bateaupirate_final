@@ -86,6 +86,7 @@ include ("partials/head.php");
 										</div>
 									</div>
 
+
 									<button id="button_detail" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
 										Ajotuer sur cart
 									</button>

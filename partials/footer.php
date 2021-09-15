@@ -9,15 +9,36 @@
 					</h4>
 
 					<ul>
+<!--                        --><?php
+//                        $query= $database->select('categories_musique','*');
+//                        $i=1;
+//                        foreach ($query as $catg){
+//
+//                            echo  '<li class="p-b-10">'.'<a href="#" class="stext-107 cl7 hov-cl1 trans-04">'.$catg['nom'].'</a></li>';
+//
+//
+//                        }
+//
+//                        ?>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shirts
+                                Pop, Rock
 							</a>
 						</li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                Hard-rock,Metal
+                            </a>
+                        </li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                Musique classique
+                            </a>
+                        </li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Pants
+                                Jazz,Blues
 							</a>
 						</li>
 
@@ -308,7 +329,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		$('.js-addwish-b2').each(function(){
 			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "est ajouté à la wishlist !", "success");
 
 				$(this).addClass('js-addedwish-b2');
 				$(this).off('click');
@@ -319,7 +340,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "est ajouté à la wishlist !", "success");
 
 				$(this).addClass('js-addedwish-detail');
 				$(this).off('click');

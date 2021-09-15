@@ -139,13 +139,13 @@ include ("partials/head.php");
 	<?php
     echo 'saaaaaaaaaaaaaaaad'.$total;
     echo $value['item_price'];
-//    foreach ($_SESSION as $key=>$val){
-//
-//        print_r($key);
-//        print_r($val) ;
-//    }
-//    print_r($key);
-//    print_r($val) ;
+    foreach ($_SESSION as $key=>$val){
+
+        print_r($key);
+        print_r($val) ;
+    }
+    print_r($key);
+    print_r($val) ;
 	include('partials/footer.php');
 	?>
 </body>
