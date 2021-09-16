@@ -33,9 +33,9 @@ include('adminpartials/head.php');
           $query=$database->select('vinyl','*',['idVinyl'=>$id])
           ?>
 
-          <h3> Name : <?php echo $query[0]['nomVinyl']?> </h3><hr><br>
+          <h3> Nom : <?php echo $query[0]['nomVinyl']?> </h3><hr><br>
 
-          <h3> Price : <?php echo $query[0]['prixHT']?> </h3><hr><br>
+          <h3> Prix : <?php echo $query[0]['prixHT']?> </h3><hr><br>
 
           <h3> Description : <?php echo $query[0]['description']?> </h3><hr><br>
           <img src="<?php echo $query[0]['photo'] ?>" alt="No File" style="height:300px; width:300px">

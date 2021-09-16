@@ -10,7 +10,12 @@ include('adminpartials/head.php');
   <?php
   include('adminpartials/header.php');
   include('adminpartials/aside.php');
-  
+  $newid=htmlspecialchars($_GET['up_id']) ;
+
+  include('../connexion/connect.php');
+
+
+  $query=$database->select('vinyl','*',['idVinyl'=>$newid])
 
   ?>
   <!-- Left side column. contains the logo and sidebar -->
@@ -28,15 +33,6 @@ include('adminpartials/head.php');
 
         <div class="col-sm-6">
         <form role="form" action="proupdatehandler.php" method="post" enctype="multipart/form-data">
-          <?php
-          $newid=htmlspecialchars($_GET['up_id']) ;
-
-          include('../connexion/connect.php');
-
-
-$query=$database->select('vinyl','*',['idVinyl'=>$newid])
-
-          ?>
           <h1>Vinyles</h1>
               <div class="box-body">
                 <div class="form-group">
@@ -52,7 +48,7 @@ $query=$database->select('vinyl','*',['idVinyl'=>$newid])
                   <input type="file" id="picture" name="file" value="<?php echo $query[0]['photo'] ?>">
                 </div>
                 <div class="form-group">
-                  <label for="description">Description</label>
+                  <label for="description">Description:</label><br>
                   <textarea id="description" class="form-control" rows="10" placeholder="Enter Déscription" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>
                 </div>
                 <div class="form-group">

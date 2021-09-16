@@ -78,7 +78,7 @@
 </div>
 
 <div id="main">
-    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+    <button class="openbtn" onclick="openNav()">☰</button>
 <!--    <h2>Collapsed Sidebar</h2>-->
 <!--    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>-->
 <!--</div>-->
