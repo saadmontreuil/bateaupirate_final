@@ -8,8 +8,8 @@ include('../connexion/connect.php');
 
 
 
-$email=$_POST['email'];
-$password=$_POST['password'];
+$email= htmlspecialchars($_POST['email']) ;
+$password=htmlspecialchars($_POST['password']) ;
 
 $qeuery= $database->select('admins','*',[
     "AND" => [

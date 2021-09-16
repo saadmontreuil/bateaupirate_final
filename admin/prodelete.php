@@ -1,6 +1,6 @@
 <?php
 include('../connexion/connect.php');
-$newid=$_GET['del_id'];
+$newid= htmlspecialchars($_GET['del_id']) ;
 
 
 $database->delete('vinyl',['idVinyl'=>$newid]);

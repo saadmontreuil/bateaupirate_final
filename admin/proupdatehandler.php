@@ -1,11 +1,11 @@
 <?php
 include('../connexion/connect.php');
 if(isset($_POST['update'])){
-	$newid=$_POST['form_id'];
-	$newname=$_POST['name'];
-	$newprice=$_POST['price'];
-	$newdesc=$_POST['description'];
-	$newcat=$_POST['category'];
+	$newid= htmlspecialchars($_POST['form_id']) ;
+	$newname= htmlspecialchars($_POST['name']) ;
+	$newprice= htmlspecialchars($_POST['price']) ;
+	$newdesc= htmlspecialchars($_POST['description']) ;
+	$newcat= htmlspecialchars($_POST['category'])  ;
 
 
 $target="uploads/";

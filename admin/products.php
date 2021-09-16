@@ -17,18 +17,7 @@ include('adminpartials/head.php');
   
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+
 
     <!-- Main content -->
     <section class="content">
@@ -39,26 +28,26 @@ include('adminpartials/head.php');
 
         <div class="col-sm-6">
         <form role="form" action="producthandler.php" method="post" enctype="multipart/form-data">
-          <h1>Products</h1>
+          <h1>Vinyles</h1>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" name="name">
+                  <label for="name">Nom</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Vinyle Nom" name="name">
                 </div>
                 <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Price" name="price">
+                  <label for="price">Prix</label>
+                  <input type="text" class="form-control" id="price" placeholder="Prix" name="price">
                 </div>
                 <div class="form-group">
-                  <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file">
+                  <label for="picture">Photo</label>
+                  <input type="file" id="photo" name="file">
                 </div>
                 <div class="form-group">
-                  <label for="description">Description</label>
+                  <label for="description">Déscription</label>
                   <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="category">Category</label>
+                  <label for="category">Catégorie</label>
                   <select id="category" name="category">
                     <?php
                     include('../connexion/connect.php');
@@ -74,7 +63,7 @@ include('adminpartials/head.php');
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
               </div>
             </form>
 </div>

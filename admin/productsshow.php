@@ -16,19 +16,6 @@ include('adminpartials/head.php');
   <!-- Left side column. contains the logo and sidebar -->
   
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -36,7 +23,7 @@ include('adminpartials/head.php');
       <div class="row">
         <div class="col-sm-9">
           <a href="products.php">
-          <button style="color:green">Add New</button>
+          <button style="color:green">Ajouter un nouveau</button>
         </a>
         
           <?php
@@ -52,11 +39,11 @@ include('adminpartials/head.php');
           </a>
 
           <a href="proupdate.php?up_id=<?php echo $vinyl['idVinyl'] ?>">
-            <button>Update</button>
+            <button>Mettre à jour</button>
           </a>
 
           <a href="prodelete.php?del_id=<?php echo $vinyl['idVinyl'] ?>">
-            <button style="color:red">Delete</button>
+            <button style="color:red">Supprimer</button>
           </a><hr>
 
 

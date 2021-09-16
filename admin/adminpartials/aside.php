@@ -15,25 +15,25 @@
         <li class="active treeview">
      <li>
           <a href="adminindex.php">
-            <i class="fa fa-th"></i> <span>Home</span>
+            <i class="fa fa-th"></i> <span>Aceuill</span>
             
           </a>
         </li>
         <li>
           <a href="categories.php">
-            <i class="fa fa-th"></i> <span>Category</span>
+            <i class="fa fa-th"></i> <span>Catégorie</span>
             
           </a>
         </li>
          <li>
           <a href="productsshow.php">
-            <i class="fa fa-th"></i> <span>Products</span>
+            <i class="fa fa-th"></i> <span>Vinyles</span>
             
           </a>
         </li>
         <li>
           <a href="orders.php">
-            <i class="fa fa-th"></i> <span>Orders</span>
+            <i class="fa fa-th"></i> <span>Commandes</span>
             
           </a>
         </li>
@@ -41,7 +41,7 @@
         
         <li>
           <a href="adminpartials/logout.php">
-            <i class="fa fa-th"></i> <span>Sign Out</span>
+            <i class="fa fa-th"></i> <span>Log Out</span>
             
           </a>
         </li>

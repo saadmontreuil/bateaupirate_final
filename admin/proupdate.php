@@ -17,18 +17,7 @@ include('adminpartials/head.php');
   
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+
 
     <!-- Main content -->
     <section class="content">
@@ -40,7 +29,7 @@ include('adminpartials/head.php');
         <div class="col-sm-6">
         <form role="form" action="proupdatehandler.php" method="post" enctype="multipart/form-data">
           <?php
-          $newid=$_GET['up_id'];
+          $newid=htmlspecialchars($_GET['up_id']) ;
 
           include('../connexion/connect.php');
 
@@ -48,26 +37,26 @@ include('adminpartials/head.php');
 $query=$database->select('vinyl','*',['idVinyl'=>$newid])
 
           ?>
-          <h1>Products</h1>
+          <h1>Vinyles</h1>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" value="<?php echo $query[0]['nomVinyl'] ?>" name="name">
+                  <label for="name">Nom</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Vinyle Nom" value="<?php echo $query[0]['nomVinyl'] ?>" name="name">
                 </div>
                 <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $query[0]['prixHT'] ?>" name="price">
+                  <label for="price">Prix</label>
+                  <input type="text" class="form-control" id="price" placeholder="Prix" value="<?php echo $query[0]['prixHT'] ?>" name="price">
                 </div>
                 <div class="form-group">
-                  <label for="picture">File input</label>
+                  <label for="picture">Photo</label>
                   <input type="file" id="picture" name="file" value="<?php echo $query[0]['photo'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Déscription" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="category">Category</label>
+                  <label for="category">Catégorie</label>
                   <select id="category" name="category" value="<?php echo $query[0]['idCategorie'] ?>">
                     <?php
 
@@ -82,7 +71,7 @@ $query=$database->select('vinyl','*',['idVinyl'=>$newid])
 
               <div class="box-footer">
                 <input type="hidden" value="<?php echo $query[0]['idVinyl'] ?>" name="form_id">
-                <button type="submit" class="btn btn-primary" name="update">Update</button>
+                <button type="submit" class="btn btn-primary" name="update">mettre à jour</button>
               </div>
             </form>
 </div>

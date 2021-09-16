@@ -1,9 +1,9 @@
 <?php
 include('../connexion/connect.php');
-$name=$_POST['name'];
-$price=$_POST['price'];
-$description=$_POST['description'];
-$category=$_POST['category'];
+$name= htmlspecialchars($_POST['name']) ;
+$price= htmlspecialchars($_POST['price']) ;
+$description= htmlspecialchars($_POST['description']) ;
+$category= htmlspecialchars($_POST['category']) ;
 
 
 $target="uploads/";

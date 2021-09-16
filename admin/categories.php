@@ -14,21 +14,7 @@ include('adminpartials/head.php');
 
   ?>
   <!-- Left side column. contains the logo and sidebar -->
-  
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -39,18 +25,18 @@ include('adminpartials/head.php');
 
         <div class="col-sm-6">
         <form role="form" action="cathandler.php" method="post">
-          <h1>Categories</h1>
+          <h1>Catégories</h1>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="category">Categories</label>
-                  <input type="text" class="form-control" id="category" placeholder="Enter category" name="name">
+                  <label for="category">Catégories</label>
+                  <input type="text" class="form-control" id="category" placeholder="Enter Catégorie" name="name">
                 </div>
                 
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
               </div>
             </form>
 </div>

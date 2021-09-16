@@ -1,6 +1,6 @@
 <?php
 include("../partials/connect.php");
-$category=$_POST['name'];
+$category= htmlspecialchars($_POST['name']) ;
 
 
 $database->insert('categories_musique',['nom'=>$category]);
