@@ -25,19 +25,19 @@ include('adminpartials/head.php');
       <div class="row">
         <div class="col-sm-9">
          <a href="products.php">
-            <button style="color: green">Ajouter des vinyles</button>
+            <button>Ajouter des vinyles</button>
           </a>
           <hr>
         </div>
         <div class="col-sm-9">
          <a href="categories.php">
-            <button style="color: green">Ajouter des catégories</button>
+            <button >Ajouter des catégories</button>
           </a>
           <hr>
         </div>
          <div class="col-sm-9">
          <a href="orders.php">
-            <button style="color: green">Voir les commandes</button>
+            <button >Voir les commandes</button>
           </a>
           <hr>
         </div>

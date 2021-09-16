@@ -23,7 +23,7 @@ include('adminpartials/head.php');
       <div class="row">
         <div class="col-sm-9">
           <a href="products.php">
-          <button style="color:green">Ajouter un nouveau</button>
+          <button >Ajouter un nouveau</button>
         </a>
         
           <?php
@@ -35,6 +35,7 @@ include('adminpartials/head.php');
 
             <a href="proshow.php?pro_id=<?php echo $vinyl['idVinyl']?>">
             <h3><?php echo $vinyl['idVinyl'] ?>: <?php echo $vinyl['nomVinyl']?></h3><br>
+                <img src="<?php echo $vinyl['photo'] ?>" alt="No File" style="height:250px; width:250px"><br>
 
           </a>
 
@@ -43,7 +44,7 @@ include('adminpartials/head.php');
           </a>
 
           <a href="prodelete.php?del_id=<?php echo $vinyl['idVinyl'] ?>">
-            <button style="color:red">Supprimer</button>
+            <button >Supprimer</button>
           </a><hr>
 
 

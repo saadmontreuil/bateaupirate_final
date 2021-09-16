@@ -38,7 +38,7 @@ include('adminpartials/head.php');
           <h3> Price : <?php echo $query[0]['prixHT']?> </h3><hr><br>
 
           <h3> Description : <?php echo $query[0]['description']?> </h3><hr><br>
-          <img src="../<?php echo $query[0]['photo'] ?>" alt="No File" style="height:300px; width:300px">
+          <img src="<?php echo $query[0]['photo'] ?>" alt="No File" style="height:300px; width:300px">
 
 
 

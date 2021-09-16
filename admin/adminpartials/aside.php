@@ -1,51 +1,96 @@
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-     
-<div class="user-panel">
-        
-      </div>
-      <!-- search form -->
-      
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"><?php echo $_SESSION['email'] ?></li>
-        <li class="active treeview">
-     <li>
-          <a href="adminindex.php">
-            <i class="fa fa-th"></i> <span>Aceuill</span>
-            
-          </a>
-        </li>
-        <li>
-          <a href="categories.php">
-            <i class="fa fa-th"></i> <span>Catégorie</span>
-            
-          </a>
-        </li>
-         <li>
-          <a href="productsshow.php">
-            <i class="fa fa-th"></i> <span>Vinyles</span>
-            
-          </a>
-        </li>
-        <li>
-          <a href="orders.php">
-            <i class="fa fa-th"></i> <span>Commandes</span>
-            
-          </a>
-        </li>
-        
-        
-        <li>
-          <a href="adminpartials/logout.php">
-            <i class="fa fa-th"></i> <span>Log Out</span>
-            
-          </a>
-        </li>
-        </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="adminindex.php">Aceuill</a>
+    <a href="categories.php">Catégorie</a>
+    <a href="productsshow.php">Vinyles</a>
+    <a href="orders.php">Commandes</a>
+    <a href="adminpartials/logout.php">Log Out</a>
+</div>
+
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+<!--    <h2>Collapsed Sidebar</h2>-->
+<!--    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>-->
+<!--</div>-->
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>

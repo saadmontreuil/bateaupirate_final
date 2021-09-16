@@ -1,5 +1,5 @@
 <?php
-include("../partials/connect.php");
+include("../connexion/connect.php");
 $category= htmlspecialchars($_POST['name']) ;
 
 

@@ -42,7 +42,7 @@ include('adminpartials/head.php');
 
 
           <a href="orderdelete.php?del_id=<?php echo $command['idCommande'] ?>">
-            <button style="color:red">Supprimer</button>
+            <button >Supprimer</button>
           </a><hr>
 
 

@@ -1,30 +1,34 @@
-<header class="main-header">
-    <!-- Logo -->
-    <a href="adminindex.php" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-      
-    </nav>
-  </header>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Tableau de bord
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Acueill</a></li>
-            <li class="active">Tableau de bord</li>
-        </ol>
-    </section>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    button {
+        background-color: #448ec7;
+        border-radius:4px;
+        display:inline-block;
+        color:#ffffff;
+        padding:16px 31px;
+
+    }
+    button:hover {
+        background-color: #07304b;
+    }
+    button:active {
+        position:relative;
+        top:1px;
+    }
+    input[type=text]
+    {
+
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+
+    }
+    .openbtn{
+        margin-bottom: 30px;
+    }
+</style>
