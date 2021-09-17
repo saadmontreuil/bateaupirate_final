@@ -29,12 +29,10 @@ include('adminpartials/head.php');
               <div class="box-body">
                 <div class="form-group">
                   <label for="category">Catégories</label>
-                  <input type="text" class="form-control" id="category" placeholder="Enter Catégorie" name="name">
+                  <input type="text" class="form-control" id="category" placeholder="Nom de la Catégorie" name="name">
                 </div>
                 
               </div>
-              <!-- /.box-body -->
-
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Ajouter</button>
               </div>

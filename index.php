@@ -460,7 +460,6 @@ include ("partials/banner.php");
 									$<?php echo $vinyl['prixHT'] ?>
 								</span>
 							</div>
-
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">

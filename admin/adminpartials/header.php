@@ -22,7 +22,7 @@
     input[type=text]
     {
 
-        width: 30%;
+        width: 300px;
         padding: 12px 20px;
         margin: 8px 0;
         box-sizing: border-box;
@@ -32,9 +32,9 @@
         margin-bottom: 30px;
     }
      select {
-        -webkit-appearance: none;
+        /*-webkit-appearance: none;*/
         padding: 7px 40px 7px 12px;
-        width: 30%;
+        width: 200px;
         border: 1px solid #e8eaed;
         border: 1px solid #e8eaed;
         border-radius: 5px;
@@ -44,5 +44,10 @@
         font-family: inherit;
         font-size: 16px;
         transition: all 150ms ease;
+    }
+    textarea {
+        resize: none;
+        height: 100px;
+        width: 300px;
     }
 </style>

@@ -14,7 +14,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: #063771;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
@@ -41,16 +41,16 @@
             margin-left: 50px;
         }
 
-        .openbtn {
+        .openButton {
             font-size: 20px;
             cursor: pointer;
-            background-color: #111;
+            background-color: #063771;
             color: white;
             padding: 10px 15px;
             border: none;
         }
 
-        .openbtn:hover {
+        .openButton:hover {
             background-color: #444;
         }
 
@@ -59,7 +59,6 @@
             padding: 16px;
         }
 
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media screen and (max-height: 450px) {
             .sidebar {padding-top: 15px;}
             .sidebar a {font-size: 18px;}
@@ -68,8 +67,8 @@
 </head>
 <body>
 
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<div id="Sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closButton" onclick="closeNav()">×</a>
     <a href="adminindex.php">Aceuill</a>
     <a href="categories.php">Catégorie</a>
     <a href="productsshow.php">Vinyles</a>
@@ -78,19 +77,16 @@
 </div>
 
 <div id="main">
-    <button class="openbtn" onclick="openNav()">☰</button>
-<!--    <h2>Collapsed Sidebar</h2>-->
-<!--    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>-->
-<!--</div>-->
+    <button class="openButton" onclick="openNav()">☰</button>
 
 <script>
     function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("Sidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
     }
 
     function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("Sidebar").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
 </script>

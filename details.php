@@ -40,9 +40,9 @@ include ("partials/head.php");
 
 								<div class="item-slick3" data-thumb="<?php echo $query[0]['photo'] ?>">
 									<div class="wrap-pic-w pos-relative" style="height: 600px">
-										<img src="images/photos/<?php echo $query[0]['photo'] ?>" alt="IMG-PRODUCT">
+										<img src="<?php echo $query[0]['photo'] ?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/photos/<?php echo $query[0]['photo'] ?>">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $query[0]['photo'] ?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
