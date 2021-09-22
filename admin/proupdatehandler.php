@@ -26,7 +26,6 @@ $query = $database->update('vinyl',[
     'photo'=>$file_path
 ],['idVinyl'=>$newid]);
 
-
 	header('location: productsshow.php');
 
 }

@@ -36,9 +36,9 @@ include ("partials/head.php");
 							<table class="table-shopping-cart">
 								<tr class="table_head">
 									<th class="column-1">Action</th>
-									<th class="column-2">Name</th>
-									<th class="column-3">Price</th>
-									<th class="column-4">Quantity</th>
+									<th class="column-2">Nom</th>
+									<th class="column-3">Prix</th>
+									<th class="column-4">Quantité</th>
 									<th class="column-5">Total</th>
 								</tr>
 								<?php 
@@ -63,7 +63,7 @@ include ("partials/head.php");
 									<td class="column-1">
 										<div class="">
 											<form action="cartremove.php" method="POST">
-											<button class="btn btn-sm btn-outline-danger" name="remove">Remove</button>
+											<button class="btn btn-sm btn-outline-danger" name="remove">Enleve</button>
 											<input type="hidden" name="item_name" value="<?php echo $value['item_name'] ?>">
 											</form>
 										</div>
@@ -107,7 +107,7 @@ include ("partials/head.php");
 				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
 					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
 						<h4 class="mtext-109 cl2 p-b-30">
-							Cart Totals
+                            Totaux du Cart
 						</h4>
 
 						<div class="flex-w flex-t bor12 p-b-13">
@@ -125,7 +125,7 @@ include ("partials/head.php");
 						</div>
 
 						<button onclick="location.href='cart2.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
+                            Passer à la commande
 						</button>
 					</div>
 				</div>
@@ -137,15 +137,15 @@ include ("partials/head.php");
 
 
 	<?php
-    echo 'saaaaaaaaaaaaaaaad'.$total;
-    echo $value['item_price'];
-    foreach ($_SESSION as $key=>$val){
-
-        print_r($key);
-        print_r($val) ;
-    }
-    print_r($key);
-    print_r($val) ;
+//    echo 'saaaaaaaaaaaaaaaad'.$total;
+//    echo $value['item_price'];
+//    foreach ($_SESSION as $key=>$val){
+//
+//        print_r($key);
+//        print_r($val) ;
+//    }
+//    print_r($key);
+//    print_r($val) ;
 	include('partials/footer.php');
 	?>
 </body>

@@ -77,7 +77,7 @@ include ("partials/header.php");
             <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
                 <form action="resetpassword.php" method="post">
                     <h4 class="mtext-105 cl2 txt-center p-b-30">
-                        reset password
+                        réinitialiser le mot de passe
                     </h4>
 
                     <div class="bor8 m-b-20 how-pos4-parent">

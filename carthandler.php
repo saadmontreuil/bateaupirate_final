@@ -23,5 +23,4 @@ if (isset($_SESSION['cart'])) {
 	window.location.href='product.php';
 	</script>";
 }
-//'quantity'=>$_POST['num-product']
 ?>

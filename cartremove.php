@@ -12,10 +12,9 @@ if (isset($_POST['remove'])) {
 					window.location.href='cart.php';
 					</script>
 				";
-						# code...
-					}		# code...
+
+					}
 	}
-	# code...
 }
 
 

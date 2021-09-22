@@ -23,7 +23,7 @@ include ("partials/head.php");
 			<div class="row">
 				<?php
 				include("connexion/connect.php");
-			echo	$id= htmlspecialchars($_GET['details_id']) ;
+			$id= htmlspecialchars($_GET['details_id']) ;
 
                 $query =$database->select("vinyl", "*",['idVinyl'=>$id]);
 
@@ -87,13 +87,13 @@ include ("partials/head.php");
 									</div>
 
 <?php
-if (!isset($_POST['button_detail'])){
-    $val = htmlspecialchars($_POST['button_detail']) ;
-}
+//if (!isset($_POST['button_detail'])){
+//    $val = htmlspecialchars($_POST['button_detail']) ;
+//}
 
 
 ?>
-									<button id="button_detail" name="button_detail" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>&quantitte=<?php echo $val ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+									<button id="button_detail" name="button_detail" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
 										Ajotuer sur cart
 									</button>
 

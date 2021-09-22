@@ -45,7 +45,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
 
         'idCommande'=>$orderid,
         'idVinyl'=>$proid,
-        'quantite'=>$quantity,
+        'quantite'=>$quantity
 
     ]);
 }

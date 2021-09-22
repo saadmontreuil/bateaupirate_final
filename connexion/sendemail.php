@@ -17,6 +17,7 @@ retourne true si le mail a bien été envoyé, false sinon
  **/
 function send_mail($to, $subject, $body)
 {
+
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
     $username = "promodevweb@gmail.com"; // on utilise un compte gmail créé pour l'occasion

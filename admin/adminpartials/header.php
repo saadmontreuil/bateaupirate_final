@@ -28,7 +28,7 @@
         box-sizing: border-box;
 
     }
-    .openbtn{
+    .openButton{
         margin-bottom: 30px;
     }
      select {
