@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_POST['button_detail']) ){
-    $val = $_POST['button_detail'];
+if (isset($_POST['num-product']) ){
+    $val = $_POST['num-product'];
 }
 if (isset($_SESSION['cart'])) {
 	$checker=array_column($_SESSION['cart'], 'item_name');

@@ -48,7 +48,7 @@ include ("partials/head.php");
 								if (isset($_SESSION['cart'])) {
 									
 									foreach ($_SESSION['cart'] as $key => $value) {
-									$total=$total+$value['item_price'];
+                                        $total=$total+($value['item_price']*$value['quantity']);
 									
 
 

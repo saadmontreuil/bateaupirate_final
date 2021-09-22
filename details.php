@@ -70,7 +70,7 @@ include ("partials/head.php");
 						<div class="p-t-33">
 
 
-<!--                            <form action="carthandler.php" method="post">-->
+                            <form action="carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>" method="post">
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -86,21 +86,15 @@ include ("partials/head.php");
 										</div>
 									</div>
 
-<?php
-//if (!isset($_POST['button_detail'])){
-//    $val = htmlspecialchars($_POST['button_detail']) ;
-//}
+                      <button type="submit"  class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                            Ajotuer sur cart
+	                        </button>
 
 
-?>
-									<button id="button_detail" name="button_detail" onclick="location.href='carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>'"   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-										Ajotuer sur cart
-									</button>
-
-								</div>
+                                </div>
 							</div>
 						</div>
-<!--                        </form>-->
+                        </form>
 
 						<!--  -->
 						<div class="flex-w flex-m p-l-100 p-t-40 respon7">

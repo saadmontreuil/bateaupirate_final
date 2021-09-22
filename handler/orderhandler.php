@@ -16,7 +16,7 @@ $query = $database->insert('commandes',[
     'idClient'=>$customerid,
     'total'=>$total,
 
-]);
+],'ID');
 
 
 //$sql2="Select id from orders order by id DESC limit 1";
@@ -24,18 +24,19 @@ $query = $database->insert('commandes',[
 //$final=$result->fetch_assoc();
 //$orderid=$final['id'];
 
-$query2 = $database->select('commandes',"idCommande",['ORDER'=>[
-    "idCommande"=>'DESC',
-    'LIMIT' => 1
-
-]
-]);
-$orderid = $query2;
+//$query2 = $database->select('commandes',"idCommande",['ORDER'=>[
+//    "idCommande"=>'DESC',
+//    'LIMIT' => 1
+//
+//]
+//]);
+$orderid = $database->id();
 
 
 foreach ($_SESSION['cart'] as $key => $value) {
 	$proid=$value['item_id'];
 	$quantity=$value['quantity'];
+    $prixHT=$value['quantity']*$value['item_price'];
 
 
 //	$sql3="INSERT Into order_details(order_id,product_id,quantity) VAlUES('$orderid','$proid','$quantity')";
@@ -45,7 +46,8 @@ foreach ($_SESSION['cart'] as $key => $value) {
 
         'idCommande'=>$orderid,
         'idVinyl'=>$proid,
-        'quantite'=>$quantity
+        'quantite'=>$quantity,
+        'montantHT'=>$prixHT
 
     ]);
 }
