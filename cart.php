@@ -64,13 +64,13 @@ include ("partials/head1.php");
 									<td class="column-3">$ <?php echo $value['item_price'] ?></td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m quantityupdate">
 												<i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
 
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?php echo $value['quantity'] ?>">
+											<input id="quantitycart" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?php echo $value['quantity'] ?>">
 
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m quantityupdate">
 												<i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
@@ -125,12 +125,20 @@ include ("partials/head1.php");
 		</div>
 	</div>
 
-
-
-
 	<?php
-
+    print_r($_SESSION['cart'][0]['quantity']);
 	include('partials/footer.php');
+
 	?>
+
+
+    <script>
+        $('.quantityupdate').on('click', function() {
+
+
+
+            // alert($('#quantitycart').val());
+        });
+    </script>
 </body>
 </html>
