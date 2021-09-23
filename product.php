@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include "connexion/connect.php" ;
-include_once "connexion/tools.php" ;
+//include "connexion/connect.php" ;
+//include_once "connexion/tools.php" ;
+include ("partials/head1.php");
 include ("partials/head.php");
 ?>
 <body class="animsition">

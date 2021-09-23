@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
-include("handler/customersession.php");
+include ("partials/head1.php");
+//include("handler/customersession.php");
 include ("partials/head.php");
+
 ?>
 <body class="animsition">
 	<?php

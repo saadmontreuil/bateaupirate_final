@@ -47,6 +47,7 @@ include('adminpartials/head.php');
                   <label for="picture">Photo</label>
                   <input type="file" id="picture" name="file" value="<?php echo $query[0]['photo'] ?>">
                 </div>
+                  <?php echo $query[0]['photo'] ?>
                 <div class="form-group">
                   <label for="description">Description:</label><br>
                   <textarea id="description" class="form-control" rows="10" placeholder="Enter Déscription" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>

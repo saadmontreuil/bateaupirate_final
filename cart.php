@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
+
 include ("partials/head.php");
+include ("partials/head1.php");
 ?>
 <body class="animsition">
 	<?php
@@ -128,15 +129,7 @@ include ("partials/head.php");
 
 
 	<?php
-//    echo 'saaaaaaaaaaaaaaaad'.$total;
-//    echo $value['item_price'];
-//    foreach ($_SESSION as $key=>$val){
-//
-//        print_r($key);
-//        print_r($val) ;
-//    }
-//    print_r($key);
-//    print_r($val) ;
+    echo '<pre>';var_dump($_SESSION).'sssssaad';echo '</pre>';
 	include('partials/footer.php');
 	?>
 </body>

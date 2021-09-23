@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 include ("partials/head.php");
+include ("partials/head1.php");
 ?>
 <body class="animsition">
 	<?php

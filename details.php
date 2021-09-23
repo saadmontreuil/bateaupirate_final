@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 include ("partials/head.php");
+include ("partials/head1.php");
 ?>
 <body class="animsition">
 	<?php
@@ -22,7 +23,7 @@ include ("partials/head.php");
 		<div class="container">
 			<div class="row">
 				<?php
-				include("connexion/connect.php");
+//				include("connexion/connect.php");
 			$id= htmlspecialchars($_GET['details_id']) ;
 
                 $query =$database->select("vinyl", "*",['idVinyl'=>$id]);

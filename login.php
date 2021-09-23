@@ -45,9 +45,10 @@
                     // on met l'email en session
                     $_SESSION["email"] = $email ;
                     $_SESSION["password"] = $pwd ;
-                    $query=$database->select('clients','idClient',['email'=>$email]);
+                    $query=$database->select('clients','*',['email'=>$email]);
 
-                    $_SESSION["customerid"] = $query[0];
+                    $_SESSION["customerid"] = $query[0]['idClient'];
+                    $_SESSION["customernom"] = $query[0]['prenom'];
                     // et on redirige vers la page home.php
                     header('Location: index.php');
                 }
