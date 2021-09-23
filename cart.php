@@ -129,7 +129,7 @@ include ("partials/head1.php");
 
 
 	<?php
-    echo '<pre>';var_dump($_SESSION).'sssssaad';echo '</pre>';
+
 	include('partials/footer.php');
 	?>
 </body>
