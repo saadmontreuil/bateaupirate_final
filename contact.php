@@ -36,40 +36,18 @@ include ("partials/head.php");
 		<div class="container">
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-<!--					<form action="handler/contact.php" method="POST">-->
-<!--						<h4 class="mtext-105 cl2 txt-center p-b-30">-->
-<!--                            Envoie-nous un message-->
-<!--						</h4>-->
-<!---->
-<!--						<div class="bor8 m-b-20 how-pos4-parent">-->
-<!--							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">-->
-<!--							<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">-->
-<!--						</div>-->
-<!---->
-<!--						<div class="bor8 m-b-30">-->
-<!--							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>-->
-<!--						</div>-->
-<!---->
-<!--						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">-->
-<!--							Envoyer-->
-<!--						</button>-->
-<!--					</form>-->
+
                     <div class="container" style="" >
                         <div id="chat_box">
 
-                            <div id="chat" style="overflow: scroll; height: 300px">
+                            <div id="chat" style="overflow-y: scroll; height: 300px">
 
 
                             </div>
 
 
-                            <form id="formchat" class="form-horizontal" style="margin-top:150px;">
-<!--                                <div class="form-group">-->
-<!--                                    <label for="inputEmail3" class="col-sm-2 control-label">Nom</label>-->
-<!--                                    <div class="col-sm-10">-->
-<!--                                        <input type="text" class="form-control" id="" placeholder="Name" name="username">-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                            <form id="formchat" class="form-horizontal" style="margin-top:50px;">
+
                                 <div class="form-group">
                                     <label for="comment" class="col-sm-2 control-label">Message:</label>
                                     <div class = "col-sm-10">
@@ -78,7 +56,7 @@ include ("partials/head.php");
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" name = "submit" class="btn btn-primary">Envoyer</button>
+                                        <button type="submit" name = "submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">Envoyer</button>
                                     </div>
                                 </div>
                             </form>
@@ -142,10 +120,6 @@ include ("partials/head.php");
 	</section>	
 	
 	
-	<!-- Map -->
-	<div class="map">
-		<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
-	</div>
 
 
 

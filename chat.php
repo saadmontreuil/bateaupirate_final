@@ -15,9 +15,9 @@ foreach ($query as $message){?>
 
     <div id ="chat_data">
     </div>
-    <span style="color:red;"><?php echo $message['name'].' : '; ?></span>
-    <span style="font-family:cursive;"><?php echo $message['msg']; ?></span>
-    <span style = "font-family:cursive;float:right;"><?php echo formatDate($message['date']); ?></span>
+    <span style="color:#451dcc;"><?php echo $message['name'].' : '; ?></span>
+    <span ><?php echo $message['msg']; ?></span>
+    <span ><?php echo formatDate($message['date']); ?></span>
     <!--
                     <span></span>
                     <span></span>
