@@ -19,6 +19,7 @@ $qeuery= $database->select('admins','*',[
 
 $_SESSION['email']=$qeuery[0]['username'];
 $_SESSION['password']=$qeuery[0]['password'];
+$_SESSION['nomAdmin']=$qeuery[0]['nomAdmin'];
 
 
 

@@ -126,7 +126,7 @@ include ("partials/head1.php");
 	</div>
 
 	<?php
-    print_r($_SESSION['cart'][0]['quantity']);
+//    print_r($_SESSION['cart'][0]['quantity']);
 	include('partials/footer.php');
 
 	?>

@@ -5,7 +5,6 @@
 include ("partials/head1.php");
 include ("partials/head.php");
 
-include_once "connexion/sendemail.php";
 
 
     if(isset($_SESSION["customernom"]) && isset($_POST['message']))

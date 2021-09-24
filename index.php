@@ -35,14 +35,14 @@ include ("partials/banner.php");
 
                     <?php
                     $query= $database->select('categories_musique','*');
-                    $i=1;
+
                     foreach ($query as $catg){
 
-                     echo   '<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".'.$i.'">'.$catg['nom']
+                     echo   '<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".'.$catg['idCategorie'].'">'.$catg['nom']
 
 					.'</button>';
 
-                        $i++;
+
                     }
 
 					?>

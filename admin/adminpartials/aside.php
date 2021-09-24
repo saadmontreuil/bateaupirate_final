@@ -73,6 +73,7 @@
     <a href="categories.php">Catégorie</a>
     <a href="productsshow.php">Vinyles</a>
     <a href="orders.php">Commandes</a>
+    <a href="indexchat.php">Contact</a>
     <a href="adminpartials/logout.php">Log Out</a>
 </div>
 
