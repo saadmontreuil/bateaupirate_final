@@ -12,7 +12,6 @@ function validate_password($password)
 
     include_once ("Medoo.php");
     date_default_timezone_set('Europe/Paris');
-    // Using Medoo namespace
     use Medoo\Medoo;
 
     $database = new Medoo([

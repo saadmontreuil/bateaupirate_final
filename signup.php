@@ -1,7 +1,6 @@
 <?php
 include_once "connexion/connect.php" ;
 
-// de base on définit des variables avec les valeurs par défaut de chaque champ
 $email = "" ;
 $pwd = "" ;
 $nom = "" ;
@@ -9,43 +8,40 @@ $prenom = "" ;
 $is_pro = "0" ;
 $rgpd = false ;
 
-$error_message = null ; // on créé aussi une variable qui permettra de savoir si une erreur a été détectée et dans ce cas, son message d'erreur
+$error_message = null ;
 
-if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
+if (count($_POST) > 0)
 {
-    // POST = formulaire soumis, on récupère les valeurs du formulaire
+
     $email = htmlspecialchars($_POST["email"]) ;
     $nom = htmlspecialchars($_POST["nom"]) ;
     $prenom = htmlspecialchars($_POST["prenom"]) ;
     $pwd = htmlspecialchars($_POST["pwd"]) ;
 
-    // Et on va vérifier chaque valeur à travers une série de tests
 
-    // on commence par checker si le nom est bien présent, sinon erreur
+
+
     if (! isset($_POST["nom"]) || empty($_POST["nom"]))
     {
         $error_message = "Vous devez saisir un nom" ;
     }
-    // il faut aussi que le prénom soit défini sinon erreur
     else if (! isset($_POST["prenom"]) || empty($_POST["prenom"]))
     {
         $error_message = "Vous devez saisir un prénom" ;
     }
-    // idem pour l'email
+
     else if (! isset($_POST["email"]) || empty($_POST["email"]))
     {
         $error_message = "Vous devez saisir un email" ;
     }
-    // on vérifie ensuite que l'email soit bien valide
+
     else if (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $error_message = "Vous devez saisir un email valide" ;
     }
-    // on check ensuite si l'email n'est pas déjà utilisée par un autre utilisateur
     else if ($database->count("clients", "email", ["email" => $_POST["email"] ]))
     {
         $error_message = "Un utilisateur est déjà inscrit avec cet email" ;
     }
-    // on check ensuite si les deux champs de password sont bien présents
     else if (! isset($_POST["pwd"]) || empty($_POST["pwd"]))
     {
         $error_message = "Vous devez saisir un mot de passe" ;
@@ -55,28 +51,25 @@ if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
         $error_message = "Vous devez retaper votre mot de passe" ;
     }
 
-    // on vérifie ensuite que password 1 == password 2
     else if ($_POST["pwd"]  !== $_POST["pwd2"])
     {
         $error_message = "Vous devez saisir deux fois le même mot de passe" ;
     }
-    // et on vérifie que le mot d epasse valide bien les contraintes de complexité
     else if (! validate_password($_POST["pwd"]))
     {
         $error_message = "Votre mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre, et faire 8 caractères ou plus" ;
     }
-    // enfin, il faut que le'utilisateur ait checké la case pour le RGPD
     else if (! isset($_POST["rgpd"]))
     {
         $error_message = "Vous devez accepter les conditions d'utilisation du service" ;
     }
 
-    // si on est rentré dans aucune des conditions précédentes, ça veut dire qu'aucune erreur n'a été détexté !
-    else // toutes les conditions sont donc réunies, on créé le compte
+
+    else
     {
         // on hashe le password
         $password = password_hash($pwd, PASSWORD_BCRYPT) ;
-        // et on fait l'insertion en DB
+        // insertion en BDD
         $database->insert("clients",
             [
                 "email" => $email,
@@ -85,7 +78,7 @@ if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
                 "prenom" => $prenom,
                 "mdp" => $password,
             ]);
-        // et on redirige automatiquement vers la page login
+        // redirige  a la page login
         header('Location: login.php');
     }
 }

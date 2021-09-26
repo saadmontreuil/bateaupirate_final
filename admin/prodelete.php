@@ -5,13 +5,4 @@ $database->delete('vinyl',['idVinyl'=>$newid]);
 
 	header('location: productsshow.php');
 
-
-
-
-
-
-
-
-
-
 ?>

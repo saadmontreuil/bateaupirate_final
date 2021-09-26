@@ -41,7 +41,9 @@ include('adminpartials/head.php');
           </a>
           <hr>
         </div>
-        
+        <?php
+
+        ?>
         
         
     </section>

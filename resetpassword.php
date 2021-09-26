@@ -1,53 +1,32 @@
 <?php
     include_once "connexion/connect.php" ;
 
-    include_once "connexion/sendemail.php" ; // fonction pour envoyer des emails (nécessite Laragon)
+    include_once "connexion/sendemail.php" ;
 
-    $message = null ; // message qui servira à indiquer à l'utilisateur si l'email a été envoyé
-    if (isset($_POST["username"])) // on check si on trouve bien le username dans le POST
+    $message = null ;
+    if (isset($_POST["username"]))
     {
-        $email = htmlspecialchars($_POST["username"]) ; // username == email, on récupère l'email
-        // Et on essaie de récupérer l'utilisateur correspondant à cet email'
-        $user = $database->get("clients", "*", ["email" => $email ]) ;
-        if (! empty($user)) // si l'utilisateur a bien été retrouvé on continue
-        {
-            $token = bin2hex(random_bytes(32)); // on génère un token, des milliers de méthodes sont acceptables
-            // on créé le lien qui sera envoyé à l'utilisateur (à adapter suivant vos serveurs)
-            $link =  "http://".$_SERVER['SERVER_NAME']."/bateaupirate_final/newpassword.php?id=".$user["idClient"]."&token=".$token ;
-            // corps de l'email
-            $body = "Merci de cliquer sur le lien suivant pour réinitialiser votre mot de passe : <a href='$link'>$link</a>" ;
-            // envoi de l'email à l'utilisateur
-            send_mail($email, "Réinitialisation du mot de passe", $body) ;
+        $email = htmlspecialchars($_POST["username"]) ;
 
-            // on met aussi à jour l'utilisateur en base de données en rajoutant le token et sa date d'expiration
+        $user = $database->get("clients", "*", ["email" => $email ]) ;
+        if (! empty($user))
+        {
+            $token = bin2hex(random_bytes(32));
+            $link =  "http://".$_SERVER['SERVER_NAME']."/bateaupirate_final/newpassword.php?id=".$user["idClient"]."&token=".$token ;
+            $body = "Merci de cliquer sur le lien suivant pour réinitialiser votre mot de passe : <a href='$link'>$link</a>" ;
+
+            send_mail($email, "Réinitialisation du mot de passe", $body) ;
             $database->update("clients",
                 [
-                    "last_token" => $token, // on ne retient que le dernier token généré, ainsi les précédents token ne pourront pas être utilisés
-                    "expiration_token" => date("Y-m-d H:i:s", strtotime("+30 min")), // le token sera valide 30 minutes
+                    "last_token" => $token,
+                    "expiration_token" => date("Y-m-d H:i:s", strtotime("+20 min")),
                 ], ["email" => $email]);
         }
         $message = "Un lien de réinitialisation du mot de passe a été envoyé par email si cet email correspond a un utilisateur inscrit" ;
     }
 ?>
 
-<!---->
-<?php //include_once ("templates/header.php") ; ?>
-<!--        <div class="container">-->
-<!--            <div class="col-12">-->
-<!--                <form action="resetpassword.php" method="post">-->
-<!---->
-<!--                    <div class="container">-->
-<!--                        <label for="username"><b>Email</b></label>-->
-<!--                        <input type="email" placeholder="Entrez votre email" name="username" required>-->
-<!--                        --><?php //if ($message != null ) { // on affiche le message pour prévenir l'utilisateur de l'envoi de l'email ?>
-<!--                            <div class="alert alert-info">--><?//= $message ?><!--</div>-->
-<!--                        --><?php //} ?>
-<!--                        <button type="submit">Réinitialiser le mot de passe</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<?php //include_once ("templates/footer.php") ; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +64,7 @@ include ("partials/header.php");
                         <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
                     </div>
 
-                    <?php if ($message != null ) { // on affiche le message pour prévenir l'utilisateur de l'envoi de l'email ?>
+                    <?php if ($message != null ) {  ?>
                         <div class="alert alert-info"><?= $message ?></div>
                     <?php } ?>
 

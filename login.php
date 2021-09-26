@@ -1,37 +1,28 @@
 <?php
-    session_start() ; // on démarre une session qui servira en cas de login réussit
+    session_start() ;
     include_once "connexion/connect.php" ;
+    $error_message = null ;
 
-
-    $error_message = null ; // cette variable servira à la fois à savoir si on a trouvé une erreur et à définir un message d'erreur
-
-    // dans le post on a à la fois le username et le password
     if (isset($_POST["username"]) && isset($_POST["pwd"]))
     {
-
-
         $date = date("Y-m-d H:i:s");
         $email = htmlspecialchars($_POST["username"]) ;
         $pwd = htmlspecialchars($_POST["pwd"]) ;
-        $success = 0 ; // on enregistrera si la connexion a réussi ou échoué
+        $success = 0 ; //
 
-
-
-            // requete pour savoir si l'email existe dans la DB
             $user_db = $database->get("clients", "*", ["email" => $email ]) ;
             if (empty($user_db))
             {
-                $error_message = "Utilisateur inexistant" ; // l'utilisateur n'as pas été trouvé, le login échoue ici
+                $error_message = "Utilisateur inexistant" ;
             }
-            else{ // l'utilisateur existe, on continue
+            else{
 
-                // récupération du hash pour vérification
                 $hash = $user_db["mdp"];
-                if (password_verify($pwd, $hash)) // on check si le hash match avec le password saisi
+                if (password_verify($pwd, $hash))
                 {
-                    // ça matche !
+
                     $success = 1 ;
-                    // MAJ de l'utilisateur, on modifie sa date de "last_login" (ça ne sert pas dans le cadre de l'exercice)
+
                     $database->update("clients",
                         [
                             "last_login" => $date,
@@ -43,16 +34,12 @@
 
                     $_SESSION["customerid"] = $query[0]['idClient'];
                     $_SESSION["customernom"] = $query[0]['prenom'];
-                    // et on redirige vers la page home.php
                     header('Location: index.php');
                 }
-                else{ // le hash ne matche pas = mauvais password saisi
+                else{
                     $error_message = "Mot de passe incorrect" ;
                 }
-
             }
-
-            // que le login est réussi ou non, on enregistre la tentative de connexion en base de données
             $database->insert("connexions",
                 [
 
@@ -60,8 +47,6 @@
                     "login" => $email,
                     "success" => $success,
                 ]);
-
-
     }
 
 ?>

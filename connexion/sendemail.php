@@ -6,8 +6,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-// test : mettez votre adresse email à vous pour vérifier que ça marche
-// send_mail("maximefitz.sabbadini@gmail.com", "sujet du mail : test", "mail de test");
+
 
 /**
 $to : adresse email du destinataire (ex : "kevindu93@gmail.com")

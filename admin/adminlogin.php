@@ -11,6 +11,9 @@ include('../connexion/connect.php');
 $email= htmlspecialchars($_POST['email']) ;
 $password=htmlspecialchars($_POST['password']) ;
 
+$password=password_verify($password,PASSWORD_BCRYPT);
+
+
 $qeuery= $database->select('admins','*',[
     "AND" => [
         "username" => $email,
