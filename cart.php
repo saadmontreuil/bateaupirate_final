@@ -137,7 +137,7 @@ include ("partials/head1.php");
 
 
 
-            // alert($('#quantitycart').val());
+             alert($('#quantitycart').val());
         });
     </script>
 </body>

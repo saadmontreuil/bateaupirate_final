@@ -1,6 +1,6 @@
 <?php
     include_once "connexion/connect.php" ;
-    include_once "connexion/tools.php" ;
+
 
     $error_message = null ; // variable qui servira à la fois à savoir s'il y a eu une erreur, et son message d'erreur
     $valid_message = null ; // si l'opération a réussi, on voudra aussi afficher un message de succès
@@ -22,7 +22,7 @@
         $id = htmlspecialchars($_GET["id"]) ;
         $token = htmlspecialchars($_GET["token"]) ;
         // on récupère l'utilisateur correspondant à l'id
-        $user_db = $database->get(DATABASE_TABLE_UTILISATEURS, "*", [DATABASE_TABLE_UTILISATEURS_ID => $id ]) ;
+        $user_db = $database->get("clients", "*", ["idClient" => $id ]) ;
         // si jamais l'id ne correspondait à aucun utilisateur, c'est une erreur !
         if (empty($user_db))
         {
@@ -30,7 +30,7 @@
         }
         else{ // on a l'utilisateur, on continue le traitement
             // on check maintenant si le token de la requête correspond au token en DB
-            if ($token !== $user_db[DATABASE_TABLE_UTILISATEURS_LAST_TOKEN])
+            if ($token !== $user_db["last_token"])
             {
                 $error_message = "Le token ne correspond pas" ;
             }
@@ -38,7 +38,7 @@
             {
                 // Etape suivante : vérifier que le token n'a pas expiré
                 $date1 = new DateTime("now"); // c'est la date de maintenant
-                $date2 = new DateTime($user_db[DATABASE_TABLE_UTILISATEURS_EXPIRATION_TOKEN]); // c'est la date d'expiration du token
+                $date2 = new DateTime($user_db["expiration_token"]); // c'est la date d'expiration du token
                 if ($date1 > $date2) // on compare les deux dates
                 {
                     // si la date de maintenant est supérieur à celle du token, alors le token est expiré
@@ -70,12 +70,12 @@
                         else { // si on est là, c'est que tout est bon ! On termine
                             $password = password_hash($pwd, PASSWORD_BCRYPT) ; // on hashe le password
                             // et on update l'utilisateur en mettant à jour le password et en faisant un reset du token pour le rendre à l'avenir inutilisable
-                            $database->update(DATABASE_TABLE_UTILISATEURS,
+                            $database->update("clients",
                                 [
-                                    DATABASE_TABLE_UTILISATEURS_PASSWORD => $password,
-                                    DATABASE_TABLE_UTILISATEURS_LAST_TOKEN => null ,
-                                    DATABASE_TABLE_UTILISATEURS_EXPIRATION_TOKEN => null
-                                ], [DATABASE_TABLE_UTILISATEURS_ID => $id]);
+                                    "mdp" => $password,
+                                    "last_token" => null ,
+                                    "expiration_token" => null
+                                ], ["idClient" => $id]);
                             // enfin, on définit un message de succès
                             $valid_message = "Mot de passe réinitialisé, retour à la <a href='login.php'>page login</a>" ;
                         }
@@ -87,28 +87,7 @@
 
 ?>
 
-<!---->
-<?php //include_once ("templates/header.php") ; ?>
-<!--        <div class="container">-->
-<!--            <div class="col-12">-->
-<!--                <!-- dans l'url il faudra retrouver l'id et le token en GET, et les donénes du formmulaire en POST -->-->
-<!--                <form action="newpassword.php?id=--><?//= $id ?><!--&token=--><?//= $token ?><!--" method="post">-->
-<!--                    <div class="container">-->
-<!--                        <label for="pwd"><b>Mot de passe *</b></label>-->
-<!--                        <input type="password" placeholder="Entrez votre mot de passe" name="pwd" required>-->
-<!--                        <label for="pwd2"><b>Saisissez à nouveau votre mot de passe *</b></label>-->
-<!--                        <input type="password" placeholder="Entrez votre mot de passe" name="pwd2" required>-->
-<!--                    --><?php //if ($error_message != null ) { // en cas d'erreur, on l'affiche ?>
-<!--                        <div class="alert alert-danger">--><?//= $error_message ?><!--</div>-->
-<!--                    --><?php //} else if ($valid_message != null) { // si la réinitialisation a réussi on l'indique aussi à l'utilisateur ?>
-<!--                        <div class="alert alert-info">--><?//= $valid_message ?><!--</div>-->
-<!--                        --><?php //} ?>
-<!--                        <button type="submit">Modifier</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<?php //include_once ("templates/footer.php") ; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

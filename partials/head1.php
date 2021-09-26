@@ -11,7 +11,7 @@ session_start() ; // il faut démarrer la session
 //    print_r($val) ;
 //echo $_SESSION['password'];
 include "connexion/connect.php" ;
-include_once "connexion/tools.php" ;
+
 
 $error_message = null ; // cette variable servira à savoir à la fois si une erreur a été détectée et si oui, son message
 if ((isset($_GET["action"]) && $_GET["action"] === "logout") // bouton logout
@@ -28,7 +28,7 @@ if ((isset($_GET["action"]) && $_GET["action"] === "logout") // bouton logout
 // cas simple : l'utilisateur a cliquer sur un lien delete et a confirmé la suppression, on supprime donc l'utilisateur
 if (isset($_GET["delete"]) && ! empty($_GET["delete"]))
 {
-    $user = $database->delete(DATABASE_TABLE_UTILISATEURS, [DATABASE_TABLE_UTILISATEURS_ID => $_GET["delete"]]) ;
+    $user = $database->delete("clients", ["idClient" => $_GET["delete"]]) ;
 }
 
 // Traitement des formulaires
@@ -68,7 +68,7 @@ if (isset($_POST["submit"]))
     }
 
     // dans le cas création aussi, l'email ne doit pas déjà exister en base (e édition il ne faut pas faire ce test)
-    if ($id == null && $database->count(DATABASE_TABLE_UTILISATEURS, DATABASE_TABLE_UTILISATEURS_EMAIL, [DATABASE_TABLE_UTILISATEURS_EMAIL => $_POST["email"] ]))
+    if ($id == null && $database->count("clients", "email", ["email" => $_POST["email"] ]))
     {
         $error_message = "Un utilisateur est déjà inscrit avec cet email" ;
     }
@@ -117,28 +117,26 @@ if (isset($_POST["submit"]))
             // $id == null signifie qu'on est en mode création donc on fait un insert
             $password = password_hash($pwd, PASSWORD_BCRYPT) ;
 
-            $database->insert(DATABASE_TABLE_UTILISATEURS,
+            $database->insert("clients",
                 [
-                    DATABASE_TABLE_UTILISATEURS_EMAIL => $email,
-//                    DATABASE_TABLE_UTILISATEURS_IS_PRO => $is_pro,
-                    DATABASE_TABLE_UTILISATEURS_LAST_LOGIN => null,
-                    DATABASE_TABLE_UTILISATEURS_NOM => $nom,
-                    DATABASE_TABLE_UTILISATEURS_PRENOM => $prenom,
-                    DATABASE_TABLE_UTILISATEURS_PASSWORD => $password,
+                    "email" => $email,
+                    "last_login" => null,
+                    "nom" => $nom,
+                    "prenom" => $prenom,
+                    "mdp" => $password,
                 ]);
         }
         else{ // update de l'utilisateur
             $datas =  [
-                DATABASE_TABLE_UTILISATEURS_EMAIL => $email,
-                DATABASE_TABLE_UTILISATEURS_IS_PRO => $is_pro,
-                DATABASE_TABLE_UTILISATEURS_NOM => $nom,
-                DATABASE_TABLE_UTILISATEURS_PRENOM => $prenom,
+                "email" => $email,
+                "nom" => $nom,
+                "prenom" => $prenom,
             ] ;
             if ($pwd != null) // si le mot de passe est présent dans le formulaire alors on l'ajoute dans les champs à updater
             {
-                $datas[DATABASE_TABLE_UTILISATEURS_PASSWORD] = password_hash($pwd, PASSWORD_BCRYPT) ;
+                $datas["mdp"] = password_hash($pwd, PASSWORD_BCRYPT) ;
             }
-            $database->update(DATABASE_TABLE_UTILISATEURS, $datas, [DATABASE_TABLE_UTILISATEURS_ID => $id]) ;
+            $database->update("clients", $datas, ["idClient" => $id]) ;
         }
 
         // on réinitialise les variables pour vider les champs du formulaire
@@ -153,6 +151,6 @@ if (isset($_POST["submit"]))
 }
 
 // Traitement terminé, on charge la liste de tous les users pour les afficher
-$users = $database->select(DATABASE_TABLE_UTILISATEURS, "*") ;
+$users = $database->select("clients", "*") ;
 
 ?>

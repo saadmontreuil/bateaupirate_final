@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-//include "connexion/connect.php" ;
-//include_once "connexion/tools.php" ;
+
 include ("partials/head1.php");
 include ("partials/head.php");
 ?>
@@ -53,7 +52,7 @@ include ("partials/head.php");
 						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
 						Search
 					</div>
-				</div>	
+				</div>
 				<!-- Search product -->
 				<div class="dis-none panel-search w-full p-t-10 p-b-15">
 					<div class="bor8 dis-flex p-l-15">
@@ -62,7 +61,7 @@ include ("partials/head.php");
 						</button>
 
 						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
-					</div>	
+					</div>
 				</div>
 
 				<!-- Filter -->

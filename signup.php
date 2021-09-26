@@ -1,6 +1,5 @@
 <?php
 include_once "connexion/connect.php" ;
-include_once "connexion/tools.php" ;
 
 // de base on définit des variables avec les valeurs par défaut de chaque champ
 $email = "" ;
@@ -42,7 +41,7 @@ if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
         $error_message = "Vous devez saisir un email valide" ;
     }
     // on check ensuite si l'email n'est pas déjà utilisée par un autre utilisateur
-    else if ($database->count(DATABASE_TABLE_UTILISATEURS, DATABASE_TABLE_UTILISATEURS_EMAIL, [DATABASE_TABLE_UTILISATEURS_EMAIL => $_POST["email"] ]))
+    else if ($database->count("clients", "email", ["email" => $_POST["email"] ]))
     {
         $error_message = "Un utilisateur est déjà inscrit avec cet email" ;
     }
@@ -61,7 +60,7 @@ if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
     {
         $error_message = "Vous devez saisir deux fois le même mot de passe" ;
     }
-    // et on vérifie que le mot d epasse valide bien les contraintes de complexité (voir fonction dans tools.php)
+    // et on vérifie que le mot d epasse valide bien les contraintes de complexité
     else if (! validate_password($_POST["pwd"]))
     {
         $error_message = "Votre mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre, et faire 8 caractères ou plus" ;
@@ -78,13 +77,13 @@ if (count($_POST) > 0) // une façon de savoir si on a des champs dans le POST
         // on hashe le password
         $password = password_hash($pwd, PASSWORD_BCRYPT) ;
         // et on fait l'insertion en DB
-        $database->insert(DATABASE_TABLE_UTILISATEURS,
+        $database->insert("clients",
             [
-                DATABASE_TABLE_UTILISATEURS_EMAIL => $email,
-                DATABASE_TABLE_UTILISATEURS_LAST_LOGIN => null,
-                DATABASE_TABLE_UTILISATEURS_NOM => $nom,
-                DATABASE_TABLE_UTILISATEURS_PRENOM => $prenom,
-                DATABASE_TABLE_UTILISATEURS_PASSWORD => $password,
+                "email" => $email,
+                "last_login" => null,
+                "nom" => $nom,
+                "prenom" => $prenom,
+                "mdp" => $password,
             ]);
         // et on redirige automatiquement vers la page login
         header('Location: login.php');

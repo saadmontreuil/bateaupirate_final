@@ -27,19 +27,19 @@ include ("partials/head1.php");
 				<div class="col-md-7 col-lg-8">
 					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
 						<h3 class="mtext-111 cl2 p-b-16">
-							Our Story
+                            Notre histoire
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							We started this company to share our ideas of new cloths and provide you with the best garments possible. We started in 1800 and since then we have grown so much because you are our customer and you give us money to keep our company running.
+                            Nous avons créé cette entreprise pour partager nos vinyles et vous proposer les meilleures catégories. Nous avons commencé en 1800 et depuis lors, nous avons tellement grandi parce que vous êtes notre client et que vous nous donnez de l'argent pour faire fonctionner notre entreprise.
 						</p>
 
 						<p class="stext-113 cl6 p-b-26">
-							Our customers are our top priority and we do not want to lose any of you. So please drive safe and never text while on the wheel. It is dangerous.
+                            Nos clients sont notre priorité absolue et nous ne voulons perdre aucun d'entre vous. Alors s'il vous plaît, conduisez prudemment et n'écrivez jamais au volant. C'est dangereux.
 						</p>
 
 						<p class="stext-113 cl6 p-b-26">
-							Any questions? Let us know in store at Hokage office, hidden street, Hidden leaf village, HL 10018 or call us on (+1) 96 Kakashi Hatake
+                            Des questions? Faites-le nous savoir dans la page contact
 						</p>
 					</div>
 				</div>
@@ -57,21 +57,15 @@ include ("partials/head1.php");
 				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
 					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
 						<h3 class="mtext-111 cl2 p-b-16">
-							Our Mission
+                            Notre mission
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							Our mission is simple. Provide you with the finest cloths and keep doing it till you are addicted to our brand. That way, you will never go bcak to any other brand.
+                            Notre mission est simple. Vous fournir les meilleurs vinyles et continuer jusqu'à ce que vous soyez accro à notre marque. De cette façon, vous ne retournerez jamais dans aucun autre magasin.
 						</p>
 
 						<div class="bor16 p-l-29 p-b-9 m-t-22">
-							<p class="stext-114 cl6 p-r-40 p-b-11">
-								After this, we will be able to control all the clothing industry like windows control the IT industry.
-							</p>
 
-							<span class="stext-111 cl8">
-								- Danzo 
-							</span>
 						</div>
 					</div>
 				</div>

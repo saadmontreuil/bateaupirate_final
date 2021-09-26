@@ -8,7 +8,7 @@ if (isset($_POST['remove'])) {
 				unset($_SESSION['cart'][$key]);
 				$_SESSION['cart']=array_values($_SESSION['cart']);
 				echo "<script>
-					alert('item removed');
+					alert('Vinyle supprimé');
 					window.location.href='cart.php';
 					</script>
 				";

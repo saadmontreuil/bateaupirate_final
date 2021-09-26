@@ -8,7 +8,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
+<script>
 
+
+</script>
 <body>
     <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
