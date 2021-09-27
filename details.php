@@ -39,11 +39,11 @@ include ("partials/head1.php");
 
 							<div class="slick3 gallery-lb">
 
-								<div class="item-slick3" data-thumb="admin/<?php echo $query[0]['photo'] ?>">
+								<div class="item-slick3" data-thumb="admin/<?= $query[0]['photo'] ?>">
 									<div class="wrap-pic-w pos-relative" style="height: 600px">
-										<img src="admin/<?php echo $query[0]['photo'] ?>" alt="IMG-PRODUCT">
+										<img src="admin/<?= $query[0]['photo'] ?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="admin/<?php echo $query[0]['photo'] ?>">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="admin/<?= $query[0]['photo'] ?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -56,22 +56,22 @@ include ("partials/head1.php");
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							<?php echo $query[0]['nomVinyl'] ?>
+							<?= $query[0]['nomVinyl'] ?>
 						</h4>
 
 						<span class="mtext-106 cl2">
-							$<?php echo $query[0]['prixHT'] ?>
+							$<?= $query[0]['prixHT'] ?>
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">
-							<?php echo $query[0]['description'] ?>
+							<?= $query[0]['description'] ?>
 						</p>
 
 						<!--  -->
 						<div class="p-t-33">
 
 
-                            <form action="carthandler.php?cart_id=<?php echo $query[0]['idVinyl'] ?>&cart_name=<?php echo $query[0]['nomVinyl'] ?>&cart_price=<?php echo $query[0]['prixHT'] ?>" method="post">
+                            <form action="carthandler.php?cart_id=<?=  $query[0]['idVinyl'] ?>&cart_name=<?= $query[0]['nomVinyl'] ?>&cart_price=<?= $query[0]['prixHT'] ?>" method="post">
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -133,7 +133,7 @@ include ("partials/head1.php");
 						<div class="tab-pane fade show active" id="description" role="tabpanel">
 							<div class="how-pos2 p-lr-15-md">
 								<p class="stext-102 cl6">
-									<?php echo $query[0]['description'] ?>
+									<?= $query[0]['description'] ?>
 							</div>
 						</div>
 
@@ -149,7 +149,7 @@ include ("partials/head1.php");
 			</span>
 
 			<span class="stext-107 cl6 p-lr-25">
-				Categories: <?php echo $query[0]['idCategorie'] ?>
+				Categories: <?= $query[0]['idCategorie'] ?>
 			</span>
 		</div>
 	</section>

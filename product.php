@@ -265,13 +265,13 @@ include ("partials/head.php");
 
 
 				?>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?php echo $vinyl['idCategorie'] ?>">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?= $vinyl['idCategorie'] ?>">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="admin/<?php echo $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
+							<img src="admin/<?= $vinyl['photo'] ?>" alt="IMG-PRODUCT" style="min-height: 400px; max-height: 400px">
 
-							<a href="details.php?details_id=<?php echo $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="details.php?details_id=<?= $vinyl['idVinyl']?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
                                 Détails
 							</a>
 						</div>
@@ -279,11 +279,11 @@ include ("partials/head.php");
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									<?php echo $vinyl['nomVinyl'] ?>;
+									<?= $vinyl['nomVinyl'] ?>;
 								</a>
 
 								<span class="stext-105 cl3">
-									$<?php echo $vinyl['prixHT'] ?>
+									$<?= $vinyl['prixHT'] ?>
 								</span>
 							</div>
 
