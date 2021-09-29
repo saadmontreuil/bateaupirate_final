@@ -9,8 +9,8 @@ include ("partials/head.php");
 
     if(isset($_SESSION["customernom"]) && isset($_POST['message']))
     {
-        $name = $_SESSION["customernom"];
-        $message = $_POST['message'];
+        $name = htmlspecialchars($_SESSION["customernom"]);
+        $message = htmlspecialchars($_POST['message']);
 
         $database->insert('chat_info',['name'=>$name,'msg'=>$message]);
 
