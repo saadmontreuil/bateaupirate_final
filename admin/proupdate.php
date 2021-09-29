@@ -37,24 +37,24 @@ include('adminpartials/head.php');
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Nom</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Vinyle Nom" value="<?php echo $query[0]['nomVinyl'] ?>" name="name">
+                  <input type="text" class="form-control" id="name" placeholder="Enter Vinyle Nom" value="<?= $query[0]['nomVinyl'] ?>" name="name">
                 </div>
                 <div class="form-group">
                   <label for="price">Prix</label>
-                  <input type="text" class="form-control" id="price" placeholder="Prix" value="<?php echo $query[0]['prixHT'] ?>" name="price">
+                  <input type="text" class="form-control" id="price" placeholder="Prix" value="<?= $query[0]['prixHT'] ?>" name="price">
                 </div>
                 <div class="form-group">
                   <label for="picture">Photo</label>
-                  <input type="file" id="picture" name="file" value="<?php echo $query[0]['photo'] ?>">
+                  <input type="file" id="picture" name="file" value="<?= $query[0]['photo'] ?>">
                 </div>
-                  <?php echo $query[0]['photo'] ?>
+                  <?= $query[0]['photo'] ?>
                 <div class="form-group">
                   <label for="description">Description:</label><br>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Déscription" value="<?php echo $query[0]['description'] ?>" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Déscription" value="<?= $query[0]['description'] ?>" name="description"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Catégorie</label>
-                  <select id="category" name="category" value="<?php echo $query[0]['idCategorie'] ?>">
+                  <select id="category" name="category" value="<?= $query[0]['idCategorie'] ?>">
                     <?php
 
                     $query2=$database->select('categories_musique','*');
@@ -67,7 +67,7 @@ include('adminpartials/head.php');
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="hidden" value="<?php echo $query[0]['idVinyl'] ?>" name="form_id">
+                <input type="hidden" value="<?= $query[0]['idVinyl'] ?>" name="form_id">
                 <button type="submit" class="btn btn-primary" name="update">mettre à jour</button>
               </div>
             </form>

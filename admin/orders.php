@@ -34,15 +34,15 @@ include('adminpartials/head.php');
 
           foreach ($query as $command){ ?>
 
-            <a href="ordershow.php?pro_id=<?php echo $command['idCommande']?>">
-            <h3>Numero de commande :<?php echo $command['idCommande'] ?>: </h3><br>
-             <h3>Date :<?php echo $command['date_commande']?></h3><br>
-            <h3>Total: <?php echo $command['total']?></h3><br>
+            <a href="ordershow.php?pro_id=<?= $command['idCommande']?>">
+            <h3>Numero de commande :<?= $command['idCommande'] ?>: </h3><br>
+             <h3>Date :<?= $command['date_commande']?></h3><br>
+            <h3>Total: <?= $command['total']?></h3><br>
 
           </a>
 
 
-          <a href="orderdelete.php?del_id=<?php echo $command['idCommande'] ?>">
+          <a href="orderdelete.php?del_id=<?= $command['idCommande'] ?>">
             <button >Supprimer</button>
           </a><hr>
 

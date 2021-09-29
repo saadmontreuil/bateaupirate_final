@@ -33,11 +33,11 @@ include('adminpartials/head.php');
           $query= $database->select('commandes','*',['idCommande'=>$id])
           ?>
 
-          <h3> Commande : <?php echo $query[0]['idCommande']?> </h3><hr><br>
+          <h3> Commande : <?= $query[0]['idCommande']?> </h3><hr><br>
 
-          <h3> Total : <?php echo $query[0]['total']?> </h3><hr><br>
+          <h3> Total : <?= $query[0]['total']?> </h3><hr><br>
 
-          <h3> Client : <?php echo $query[0]['idClient']?> </h3><hr><br>
+          <h3> Client : <?= $query[0]['idClient']?> </h3><hr><br>
           
 
 
@@ -55,7 +55,7 @@ include('adminpartials/head.php');
               $query3=$database->select('vinyl','*',['idVinyl'=>$query2[0]['idVinyl']]);
           ?>
 
-          <h3> vinyl : <?php echo $query3[0]['nomVinyl'].""?> <?php echo "quantité :". $vinyl['quantite']?> </h3>
+          <h3> vinyl : <?=$query3[0]['nomVinyl'].""?> <?= "quantité :". $vinyl['quantite']?> </h3>
 
           
 

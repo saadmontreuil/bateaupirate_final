@@ -56,26 +56,26 @@ include ("partials/head1.php");
 										<div class="">
 											<form action="cartremove.php" method="POST">
 											<button class="btn btn-sm btn-outline-danger" name="remove">Enleve</button>
-											<input type="hidden" name="item_name" value="<?php echo $value['item_name'] ?>">
+											<input type="hidden" name="item_name" value="<?= $value['item_name'] ?>">
 											</form>
 										</div>
 									</td>
-									<td class="column-2"><?php echo $value['item_name'] ?>;</td>
-									<td class="column-3">$ <?php echo $value['item_price'] ?></td>
+									<td class="column-2"><?= $value['item_name'] ?>;</td>
+									<td class="column-3">$ <?= $value['item_price'] ?></td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m quantityupdate">
 												<i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
 
-											<input id="quantitycart" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?php echo $value['quantity'] ?>">
+											<input id="quantitycart" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?= $value['quantity'] ?>">
 
 											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m quantityupdate">
 												<i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
 									</td>
-									<td class="column-5">$ <?php echo $value['item_price'] ?></td>
+									<td class="column-5">$ <?= $value['item_price'] ?></td>
 								</tr>
 								<?php }
 									
@@ -111,7 +111,7 @@ include ("partials/head1.php");
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									$<?php echo $total ?>
+									€<?= $total ?>
 								</span>
 							</div>
 						</div>

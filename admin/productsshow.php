@@ -33,17 +33,17 @@ include('adminpartials/head.php');
           $query = $database->select('vinyl','*');
          foreach ($query as $vinyl){ ?>
 
-            <a href="proshow.php?pro_id=<?php echo $vinyl['idVinyl']?>">
-            <h3><?php echo $vinyl['idVinyl'] ?>: <?php echo $vinyl['nomVinyl']?></h3><br>
-                <img src="<?php echo $vinyl['photo'] ?>" alt="No File" style="height:250px; width:250px"><br>
+            <a href="proshow.php?pro_id=<?= $vinyl['idVinyl']?>">
+            <h3><?= $vinyl['idVinyl'] ?>: <?= $vinyl['nomVinyl']?></h3><br>
+                <img src="<?= $vinyl['photo'] ?>" alt="No File" style="height:250px; width:250px"><br>
 
           </a>
 
-          <a href="proupdate.php?up_id=<?php echo $vinyl['idVinyl'] ?>">
+          <a href="proupdate.php?up_id=<?= $vinyl['idVinyl'] ?>">
             <button>Mettre à jour</button>
           </a>
 
-          <a href="prodelete.php?del_id=<?php echo $vinyl['idVinyl'] ?>">
+          <a href="prodelete.php?del_id=<?= $vinyl['idVinyl'] ?>">
             <button >Supprimer</button>
           </a><hr>
 
