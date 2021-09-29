@@ -15,7 +15,6 @@ session_start();
 <body>
     <div id="paypal-button-container"></div>
 
-=
     <script>
 
     </script>

@@ -42,7 +42,7 @@ if ($payment=="paypal") {
 	$_SESSION['total']=$total;
 	header('location: paypal.php');
 }else{
-	echo "<script> alert('ORDER IS PLACED');
+	echo "<script> alert('LA COMMANDE EST PASSÉE');
 		window.location.href='../index.php';
 		</script>";
 }
